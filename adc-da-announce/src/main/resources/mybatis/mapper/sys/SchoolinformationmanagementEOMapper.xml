@@ -3,7 +3,7 @@
 <mapper namespace="com.adc.da.sys.dao.SchoolinformationmanagementEODao" >
   <!-- Result Map-->
   <resultMap id="BaseResultMap" type="com.adc.da.sys.entity.SchoolinformationmanagementEO" >
-    <id column="pkschoolinformation" property="pkschoolinformation" />
+    <id column="pk_schoolinformation" property="pkSchoolinformation" />
     <result column="schoolname" property="schoolname" />
     <result column="schooladdress" property="schooladdress" />
     <result column="pkregion" property="pkregion" />
@@ -14,15 +14,15 @@
 
   <!-- TS_SCHOOLINFORMATIONMANAGEMENT table all fields -->
   <sql id="Base_Column_List" >
-     pkschoolinformation, schoolname, schooladdress, pkregion, enabled, applicationtime, pkcity
+     pk_schoolinformation, schoolname, schooladdress, pkregion, enabled, applicationtime, pkcity
   </sql>
 
   <!-- 查询条件 -->
   <sql id="Base_Where_Clause">
     where 1=1
     <trim suffixOverrides="," >
-      <if test="pkschoolinformation != null" >
-        and pkschoolinformation ${pkschoolinformationOperator} #{pkschoolinformation}
+      <if test="pkSchoolinformation != null" >
+        and pk_schoolinformation ${pkSchoolinformationOperator} #{pkSchoolinformation}
       </if>
       <if test="schoolname != null" >
         and schoolname ${schoolnameOperator} #{schoolname}
@@ -53,21 +53,21 @@
 
   <!-- 插入记录 -->
   <insert id="insert" parameterType="com.adc.da.sys.entity.SchoolinformationmanagementEO" >
-    <!-- <selectKey resultType="java.lang.String" order="BEFORE" keyProperty="pkschoolinformation">
+    <!-- <selectKey resultType="java.lang.String" order="BEFORE" keyProperty="pk_schoolinformation">
         SELECT SEQ_TS_SCHOOLINFORMATIONMANAGEMENT.NEXTVAL FROM DUAL
     </selectKey> -->
     insert into TS_SCHOOLINFORMATIONMANAGEMENT(<include refid="Base_Column_List" />)
-    values (#{pkschoolinformation, jdbcType=VARCHAR}, #{schoolname, jdbcType=VARCHAR}, #{schooladdress, jdbcType=VARCHAR}, #{pkregion, jdbcType=VARCHAR}, #{enabled, jdbcType=INTEGER}, #{applicationtime, jdbcType=TIMESTAMP}, #{pkcity, jdbcType=VARCHAR})
+    values (#{pkSchoolinformation, jdbcType=VARCHAR}, #{schoolname, jdbcType=VARCHAR}, #{schooladdress, jdbcType=VARCHAR}, #{pkregion, jdbcType=VARCHAR}, #{enabled, jdbcType=INTEGER}, #{applicationtime, jdbcType=TIMESTAMP}, #{pkcity, jdbcType=VARCHAR})
   </insert>
 
   <!-- 动态插入记录 主键是序列 -->
   <insert id="insertSelective" parameterType="com.adc.da.sys.entity.SchoolinformationmanagementEO" >
-        <!-- <selectKey resultType="java.lang.String" order="BEFORE" keyProperty="pkschoolinformation">
+        <!-- <selectKey resultType="java.lang.String" order="BEFORE" keyProperty="pk_schoolinformation">
         SELECT SEQ_TS_SCHOOLINFORMATIONMANAGEMENT.NEXTVAL FROM DUAL
     </selectKey> -->
         insert into TS_SCHOOLINFORMATIONMANAGEMENT
     <trim prefix="(" suffix=")" suffixOverrides="," >
-                <if test="pkschoolinformation != null" >pkschoolinformation,</if>
+                <if test="pkSchoolinformation != null" >pk_schoolinformation,</if>
                 <if test="schoolname != null" >schoolname,</if>
                 <if test="schooladdress != null" >schooladdress,</if>
                 <if test="pkregion != null" >pkregion,</if>
@@ -76,7 +76,7 @@
                 <if test="pkcity != null" >pkcity,</if>
             </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-                <if test="pkschoolinformation != null" >#{pkschoolinformation, jdbcType=VARCHAR},</if>
+                <if test="pkSchoolinformation != null" >#{pkSchoolinformation, jdbcType=VARCHAR},</if>
                 <if test="schoolname != null" >#{schoolname, jdbcType=VARCHAR},</if>
                 <if test="schooladdress != null" >#{schooladdress, jdbcType=VARCHAR},</if>
                 <if test="pkregion != null" >#{pkregion, jdbcType=VARCHAR},</if>
@@ -95,7 +95,7 @@
             enabled = #{enabled},
             applicationtime = #{applicationtime},
             pkcity = #{pkcity}
-     where  pkschoolinformation = #{pkschoolinformation}
+     where  pk_schoolinformation = #{pkSchoolinformation}
   </update>
 
   <!-- 修改记录，只修改只不为空的字段 -->
@@ -121,21 +121,21 @@
         pkcity = #{pkcity},
       </if>
     </set>
-     where pkschoolinformation = #{pkschoolinformation}
+     where pk_schoolinformation = #{pkSchoolinformation}
   </update>
 
   <!-- 根据id查询 TS_SCHOOLINFORMATIONMANAGEMENT -->
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String">
     select <include refid="Base_Column_List" /> 
       from TS_SCHOOLINFORMATIONMANAGEMENT
-     where pkschoolinformation = #{value}
+     where pk_schoolinformation = #{value}
 
   </select>
 
   <!-- 删除记录 -->
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from TS_SCHOOLINFORMATIONMANAGEMENT
-     where pkschoolinformation = #{value}
+     where pk_schoolinformation = #{value}
 
   </delete>
 

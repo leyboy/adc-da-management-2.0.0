@@ -12,36 +12,36 @@ import java.util.Date;
  */
 public class CityinformationEO extends BaseEntity {
 
-    private String pkcity;
-    private String cityname;
-    private Integer enabled;
+    private String pkCity;
+    private String cityname1;
+    private Integer enabled1;
     @org.springframework.format.annotation.DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
-    private Date applicationtime;
-    private String cityintroduction;
-    private String citycoordinates;
-    private Integer delflag;
+    private Date applicationtime1;
+    private String cityintroduction1;
+    private String citycoordinates1;
+    private Integer delflag1;
 
     /**
      * java字段名转换为原始数据库列名。<b>如果不存在则返回null</b><br>
      * <p>字段列表：</p>
-     * <li>pkcity -> pkcity</li>
-     * <li>cityname -> cityname</li>
-     * <li>enabled -> enabled</li>
-     * <li>applicationtime -> applicationtime</li>
-     * <li>cityintroduction -> cityintroduction</li>
-     * <li>citycoordinates -> citycoordinates</li>
-     * <li>delflag -> delflag</li>
+     * <li>pkCity -> pk_city</li>
+     * <li>cityname1 -> cityname1</li>
+     * <li>enabled1 -> enabled1</li>
+     * <li>applicationtime1 -> applicationtime1</li>
+     * <li>cityintroduction1 -> cityintroduction1</li>
+     * <li>citycoordinates1 -> citycoordinates1</li>
+     * <li>delflag1 -> delflag1</li>
      */
     public static String fieldToColumn(String fieldName) {
         if (fieldName == null) return null;
         switch (fieldName) {
-            case "pkcity": return "pkcity";
-            case "cityname": return "cityname";
-            case "enabled": return "enabled";
-            case "applicationtime": return "applicationtime";
-            case "cityintroduction": return "cityintroduction";
-            case "citycoordinates": return "citycoordinates";
-            case "delflag": return "delflag";
+            case "pkCity": return "pk_city";
+            case "cityname1": return "cityname1";
+            case "enabled1": return "enabled1";
+            case "applicationtime1": return "applicationtime1";
+            case "cityintroduction1": return "cityintroduction1";
+            case "citycoordinates1": return "citycoordinates1";
+            case "delflag1": return "delflag1";
             default: return null;
         }
     }
@@ -49,96 +49,96 @@ public class CityinformationEO extends BaseEntity {
     /**
      * 原始数据库列名转换为java字段名。<b>如果不存在则返回null</b><br>
      * <p>字段列表：</p>
-     * <li>pkcity -> pkcity</li>
-     * <li>cityname -> cityname</li>
-     * <li>enabled -> enabled</li>
-     * <li>applicationtime -> applicationtime</li>
-     * <li>cityintroduction -> cityintroduction</li>
-     * <li>citycoordinates -> citycoordinates</li>
-     * <li>delflag -> delflag</li>
+     * <li>pk_city -> pkCity</li>
+     * <li>cityname1 -> cityname1</li>
+     * <li>enabled1 -> enabled1</li>
+     * <li>applicationtime1 -> applicationtime1</li>
+     * <li>cityintroduction1 -> cityintroduction1</li>
+     * <li>citycoordinates1 -> citycoordinates1</li>
+     * <li>delflag1 -> delflag1</li>
      */
     public static String columnToField(String columnName) {
         if (columnName == null) return null;
         switch (columnName) {
-            case "pkcity": return "pkcity";
-            case "cityname": return "cityname";
-            case "enabled": return "enabled";
-            case "applicationtime": return "applicationtime";
-            case "cityintroduction": return "cityintroduction";
-            case "citycoordinates": return "citycoordinates";
-            case "delflag": return "delflag";
+            case "pk_city": return "pkCity";
+            case "cityname1": return "cityname1";
+            case "enabled1": return "enabled1";
+            case "applicationtime1": return "applicationtime1";
+            case "cityintroduction1": return "cityintroduction1";
+            case "citycoordinates1": return "citycoordinates1";
+            case "delflag1": return "delflag1";
             default: return null;
         }
     }
     
     /**  **/
-    public String getPkcity() {
-        return this.pkcity;
+    public String getPkCity() {
+        return this.pkCity;
     }
 
     /**  **/
-    public void setPkcity(String pkcity) {
-        this.pkcity = pkcity;
+    public void setPkCity(String pkCity) {
+        this.pkCity = pkCity;
     }
 
     /**  **/
-    public String getCityname() {
-        return this.cityname;
+    public String getCityname1() {
+        return this.cityname1;
     }
 
     /**  **/
-    public void setCityname(String cityname) {
-        this.cityname = cityname;
+    public void setCityname1(String cityname1) {
+        this.cityname1 = cityname1;
     }
 
     /**  **/
-    public Integer getEnabled() {
-        return this.enabled;
+    public Integer getEnabled1() {
+        return this.enabled1;
     }
 
     /**  **/
-    public void setEnabled(Integer enabled) {
-        this.enabled = enabled;
+    public void setEnabled1(Integer enabled1) {
+        this.enabled1 = enabled1;
     }
 
     /**  **/
-    public Date getApplicationtime() {
-        return this.applicationtime;
+    public Date getApplicationtime1() {
+        return this.applicationtime1;
     }
 
     /**  **/
-    public void setApplicationtime(Date applicationtime) {
-        this.applicationtime = applicationtime;
+    public void setApplicationtime1(Date applicationtime1) {
+        this.applicationtime1 = applicationtime1;
     }
 
     /**  **/
-    public String getCityintroduction() {
-        return this.cityintroduction;
+    public String getCityintroduction1() {
+        return this.cityintroduction1;
     }
 
     /**  **/
-    public void setCityintroduction(String cityintroduction) {
-        this.cityintroduction = cityintroduction;
+    public void setCityintroduction1(String cityintroduction1) {
+        this.cityintroduction1 = cityintroduction1;
     }
 
     /**  **/
-    public String getCitycoordinates() {
-        return this.citycoordinates;
+    public String getCitycoordinates1() {
+        return this.citycoordinates1;
     }
 
     /**  **/
-    public void setCitycoordinates(String citycoordinates) {
-        this.citycoordinates = citycoordinates;
+    public void setCitycoordinates1(String citycoordinates1) {
+        this.citycoordinates1 = citycoordinates1;
     }
 
     /**  **/
-    public Integer getDelflag() {
-        return this.delflag;
+    public Integer getDelflag1() {
+        return this.delflag1;
     }
 
     /**  **/
-    public void setDelflag(Integer delflag) {
-        this.delflag = delflag;
+    public void setDelflag1(Integer delflag1) {
+        this.delflag1 = delflag1;
     }
 
 }

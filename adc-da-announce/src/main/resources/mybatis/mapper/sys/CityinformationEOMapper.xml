@@ -3,139 +3,139 @@
 <mapper namespace="com.adc.da.sys.dao.CityinformationEODao" >
   <!-- Result Map-->
   <resultMap id="BaseResultMap" type="com.adc.da.sys.entity.CityinformationEO" >
-    <id column="pkcity" property="pkcity" />
-    <result column="cityname" property="cityname" />
-    <result column="enabled" property="enabled" />
-    <result column="applicationtime" property="applicationtime" />
-    <result column="cityintroduction" property="cityintroduction" />
-    <result column="citycoordinates" property="citycoordinates" />
-    <result column="delflag" property="delflag" />
+    <id column="pk_city" property="pkCity" />
+    <result column="cityname1" property="cityname1" />
+    <result column="enabled1" property="enabled1" />
+    <result column="applicationtime1" property="applicationtime1" />
+    <result column="cityintroduction1" property="cityintroduction1" />
+    <result column="citycoordinates1" property="citycoordinates1" />
+    <result column="delflag1" property="delflag1" />
   </resultMap>
 
   <!-- TS_CITYINFORMATION table all fields -->
   <sql id="Base_Column_List" >
-     pkcity, cityname, enabled, applicationtime, cityintroduction, citycoordinates, delflag
+     pk_city, cityname1, enabled1, applicationtime1, cityintroduction1, citycoordinates1, delflag1
   </sql>
 
   <!-- 查询条件 -->
   <sql id="Base_Where_Clause">
     where 1=1
     <trim suffixOverrides="," >
-      <if test="pkcity != null" >
-        and pkcity ${pkcityOperator} #{pkcity}
+      <if test="pkCity != null" >
+        and pk_city ${pkCityOperator} #{pkCity}
       </if>
-      <if test="cityname != null" >
-        and cityname ${citynameOperator} #{cityname}
+      <if test="cityname1 != null" >
+        and cityname1 ${cityname1Operator} #{cityname1}
       </if>
-      <if test="enabled != null" >
-        and enabled ${enabledOperator} #{enabled}
-      </if>
-      <if test="applicationtime != null" >
-        and applicationtime ${applicationtimeOperator} #{applicationtime}
+      <if test="enabled1 != null" >
+        and enabled1 ${enabled1Operator} #{enabled1}
       </if>
       <if test="applicationtime1 != null" >
-        and applicationtime &gt;= #{applicationtime1}
+        and applicationtime1 ${applicationtime1Operator} #{applicationtime1}
       </if>
-      <if test="applicationtime2 != null" >
-        and applicationtime &lt;= #{applicationtime2}
+      <if test="applicationtime11 != null" >
+        and applicationtime1 &gt;= #{applicationtime11}
       </if>
-      <if test="cityintroduction != null" >
-        and cityintroduction ${cityintroductionOperator} #{cityintroduction}
+      <if test="applicationtime12 != null" >
+        and applicationtime1 &lt;= #{applicationtime12}
       </if>
-      <if test="citycoordinates != null" >
-        and citycoordinates ${citycoordinatesOperator} #{citycoordinates}
+      <if test="cityintroduction1 != null" >
+        and cityintroduction1 ${cityintroduction1Operator} #{cityintroduction1}
       </if>
-      <if test="delflag != null" >
-        and delflag ${delflagOperator} #{delflag}
+      <if test="citycoordinates1 != null" >
+        and citycoordinates1 ${citycoordinates1Operator} #{citycoordinates1}
+      </if>
+      <if test="delflag1 != null" >
+        and delflag1 ${delflag1Operator} #{delflag1}
       </if>
     </trim>
   </sql>
 
   <!-- 插入记录 -->
   <insert id="insert" parameterType="com.adc.da.sys.entity.CityinformationEO" >
-    <!-- <selectKey resultType="java.lang.String" order="BEFORE" keyProperty="pkcity">
+    <!-- <selectKey resultType="java.lang.String" order="BEFORE" keyProperty="pk_city">
         SELECT SEQ_TS_CITYINFORMATION.NEXTVAL FROM DUAL
     </selectKey> -->
     insert into TS_CITYINFORMATION(<include refid="Base_Column_List" />)
-    values (#{pkcity, jdbcType=VARCHAR}, #{cityname, jdbcType=VARCHAR}, #{enabled, jdbcType=INTEGER}, #{applicationtime, jdbcType=TIMESTAMP}, #{cityintroduction, jdbcType=VARCHAR}, #{citycoordinates, jdbcType=VARCHAR}, #{delflag, jdbcType=INTEGER})
+    values (#{pkCity, jdbcType=VARCHAR}, #{cityname1, jdbcType=VARCHAR}, #{enabled1, jdbcType=INTEGER}, #{applicationtime1, jdbcType=TIMESTAMP}, #{cityintroduction1, jdbcType=VARCHAR}, #{citycoordinates1, jdbcType=VARCHAR}, #{delflag1, jdbcType=INTEGER})
   </insert>
 
   <!-- 动态插入记录 主键是序列 -->
   <insert id="insertSelective" parameterType="com.adc.da.sys.entity.CityinformationEO" >
-        <!-- <selectKey resultType="java.lang.String" order="BEFORE" keyProperty="pkcity">
+        <!-- <selectKey resultType="java.lang.String" order="BEFORE" keyProperty="pk_city">
         SELECT SEQ_TS_CITYINFORMATION.NEXTVAL FROM DUAL
     </selectKey> -->
         insert into TS_CITYINFORMATION
     <trim prefix="(" suffix=")" suffixOverrides="," >
-                <if test="pkcity != null" >pkcity,</if>
-                <if test="cityname != null" >cityname,</if>
-                <if test="enabled != null" >enabled,</if>
-                <if test="applicationtime != null" >applicationtime,</if>
-                <if test="cityintroduction != null" >cityintroduction,</if>
-                <if test="citycoordinates != null" >citycoordinates,</if>
-                <if test="delflag != null" >delflag,</if>
+                <if test="pkCity != null" >pk_city,</if>
+                <if test="cityname1 != null" >cityname1,</if>
+                <if test="enabled1 != null" >enabled1,</if>
+                <if test="applicationtime1 != null" >applicationtime1,</if>
+                <if test="cityintroduction1 != null" >cityintroduction1,</if>
+                <if test="citycoordinates1 != null" >citycoordinates1,</if>
+                <if test="delflag1 != null" >delflag1,</if>
             </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-                <if test="pkcity != null" >#{pkcity, jdbcType=VARCHAR},</if>
-                <if test="cityname != null" >#{cityname, jdbcType=VARCHAR},</if>
-                <if test="enabled != null" >#{enabled, jdbcType=INTEGER},</if>
-                <if test="applicationtime != null" >#{applicationtime, jdbcType=TIMESTAMP},</if>
-                <if test="cityintroduction != null" >#{cityintroduction, jdbcType=VARCHAR},</if>
-                <if test="citycoordinates != null" >#{citycoordinates, jdbcType=VARCHAR},</if>
-                <if test="delflag != null" >#{delflag, jdbcType=INTEGER},</if>
+                <if test="pkCity != null" >#{pkCity, jdbcType=VARCHAR},</if>
+                <if test="cityname1 != null" >#{cityname1, jdbcType=VARCHAR},</if>
+                <if test="enabled1 != null" >#{enabled1, jdbcType=INTEGER},</if>
+                <if test="applicationtime1 != null" >#{applicationtime1, jdbcType=TIMESTAMP},</if>
+                <if test="cityintroduction1 != null" >#{cityintroduction1, jdbcType=VARCHAR},</if>
+                <if test="citycoordinates1 != null" >#{citycoordinates1, jdbcType=VARCHAR},</if>
+                <if test="delflag1 != null" >#{delflag1, jdbcType=INTEGER},</if>
             </trim>
   </insert>
 
   <!-- 根据pk，修改记录-->
   <update id="updateByPrimaryKey" parameterType="com.adc.da.sys.entity.CityinformationEO" >
     update TS_CITYINFORMATION
-       set  cityname = #{cityname},
-            enabled = #{enabled},
-            applicationtime = #{applicationtime},
-            cityintroduction = #{cityintroduction},
-            citycoordinates = #{citycoordinates},
-            delflag = #{delflag}
-     where  pkcity = #{pkcity}
+       set  cityname1 = #{cityname1},
+            enabled1 = #{enabled1},
+            applicationtime1 = #{applicationtime1},
+            cityintroduction1 = #{cityintroduction1},
+            citycoordinates1 = #{citycoordinates1},
+            delflag1 = #{delflag1}
+     where  pk_city = #{pkCity}
   </update>
 
   <!-- 修改记录，只修改只不为空的字段 -->
   <update id="updateByPrimaryKeySelective" parameterType="com.adc.da.sys.entity.CityinformationEO" >
     update TS_CITYINFORMATION
     <set >
-      <if test="cityname != null" >
-        cityname = #{cityname},
+      <if test="cityname1 != null" >
+        cityname1 = #{cityname1},
       </if>
-      <if test="enabled != null" >
-        enabled = #{enabled},
+      <if test="enabled1 != null" >
+        enabled1 = #{enabled1},
       </if>
-      <if test="applicationtime != null" >
-        applicationtime = #{applicationtime},
+      <if test="applicationtime1 != null" >
+        applicationtime1 = #{applicationtime1},
       </if>
-      <if test="cityintroduction != null" >
-        cityintroduction = #{cityintroduction},
+      <if test="cityintroduction1 != null" >
+        cityintroduction1 = #{cityintroduction1},
       </if>
-      <if test="citycoordinates != null" >
-        citycoordinates = #{citycoordinates},
+      <if test="citycoordinates1 != null" >
+        citycoordinates1 = #{citycoordinates1},
       </if>
-      <if test="delflag != null" >
-        delflag = #{delflag},
+      <if test="delflag1 != null" >
+        delflag1 = #{delflag1},
       </if>
     </set>
-     where pkcity = #{pkcity}
+     where pk_city = #{pkCity}
   </update>
 
   <!-- 根据id查询 TS_CITYINFORMATION -->
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String">
     select <include refid="Base_Column_List" /> 
       from TS_CITYINFORMATION
-     where pkcity = #{value}
+     where pk_city = #{value}
 
   </select>
 
   <!-- 删除记录 -->
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from TS_CITYINFORMATION
-     where pkcity = #{value}
+     where pk_city = #{value}
 
   </delete>
 

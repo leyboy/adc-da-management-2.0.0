@@ -22,7 +22,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 @RestController
-@RequestMapping("/${restPath}/sys/schoolinformationmanagement")
+@RequestMapping("/sys/schoolinformationmanagement")
 @Api(description = "|SchoolinformationmanagementEO|")
 public class SchoolinformationmanagementEOController extends BaseController<SchoolinformationmanagementEO>{
 
@@ -45,9 +45,9 @@ public class SchoolinformationmanagementEOController extends BaseController<Scho
 	}
 
     @ApiOperation(value = "|SchoolinformationmanagementEO|详情")
-    @GetMapping("/{pkschoolinformation}")
-    public ResponseMessage<SchoolinformationmanagementEO> find(@PathVariable String pkschoolinformation) throws Exception {
-        return Result.success(schoolinformationmanagementEOService.selectByPrimaryKey(pkschoolinformation));
+    @GetMapping("/{pkSchoolinformation}")
+    public ResponseMessage<SchoolinformationmanagementEO> find(@PathVariable String pkSchoolinformation) throws Exception {
+        return Result.success(schoolinformationmanagementEOService.selectByPrimaryKey(pkSchoolinformation));
     }
 
     @ApiOperation(value = "|SchoolinformationmanagementEO|新增")
@@ -65,10 +65,10 @@ public class SchoolinformationmanagementEOController extends BaseController<Scho
     }
 
     @ApiOperation(value = "|SchoolinformationmanagementEO|删除")
-    @DeleteMapping("/{pkschoolinformation}")
-    public ResponseMessage delete(@PathVariable String pkschoolinformation) throws Exception {
-        schoolinformationmanagementEOService.deleteByPrimaryKey(pkschoolinformation);
-        logger.info("delete from TS_SCHOOLINFORMATIONMANAGEMENT where pkschoolinformation = {}", pkschoolinformation);
+    @DeleteMapping("/{pkSchoolinformation}")
+    public ResponseMessage delete(@PathVariable String pkSchoolinformation) throws Exception {
+        schoolinformationmanagementEOService.deleteByPrimaryKey(pkSchoolinformation);
+        logger.info("delete from TS_SCHOOLINFORMATIONMANAGEMENT where pkSchoolinformation = {}", pkSchoolinformation);
         return Result.success();
     }
 

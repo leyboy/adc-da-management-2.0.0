@@ -12,77 +12,69 @@ import java.util.Date;
  */
 public class CityinformationEOPage extends BasePage {
 
-    private String pkcity;
-    private String pkcityOperator = "=";
-    private String cityname;
-    private String citynameOperator = "=";
-    private String enabled;
-    private String enabledOperator = "=";
-    private String applicationtime;
+    private String pkCity;
+    private String pkCityOperator = "=";
+    private String cityname1;
+    private String cityname1Operator = "=";
+    private String enabled1;
+    private String enabled1Operator = "=";
     private String applicationtime1;
-    private String applicationtime2;
-    private String applicationtimeOperator = "=";
-    private String cityintroduction;
-    private String cityintroductionOperator = "=";
-    private String citycoordinates;
-    private String citycoordinatesOperator = "=";
-    private String delflag;
-    private String delflagOperator = "=";
+    private String applicationtime11;
+    private String applicationtime12;
+    private String applicationtime1Operator = "=";
+    private String cityintroduction1;
+    private String cityintroduction1Operator = "=";
+    private String citycoordinates1;
+    private String citycoordinates1Operator = "=";
+    private String delflag1;
+    private String delflag1Operator = "=";
 
-    public String getPkcity() {
-        return this.pkcity;
+    public String getPkCity() {
+        return this.pkCity;
     }
 
-    public void setPkcity(String pkcity) {
-        this.pkcity = pkcity;
+    public void setPkCity(String pkCity) {
+        this.pkCity = pkCity;
     }
 
-    public String getPkcityOperator() {
-        return this.pkcityOperator;
+    public String getPkCityOperator() {
+        return this.pkCityOperator;
     }
 
-    public void setPkcityOperator(String pkcityOperator) {
-        this.pkcityOperator = pkcityOperator;
+    public void setPkCityOperator(String pkCityOperator) {
+        this.pkCityOperator = pkCityOperator;
     }
 
-    public String getCityname() {
-        return this.cityname;
+    public String getCityname1() {
+        return this.cityname1;
     }
 
-    public void setCityname(String cityname) {
-        this.cityname = cityname;
+    public void setCityname1(String cityname1) {
+        this.cityname1 = cityname1;
     }
 
-    public String getCitynameOperator() {
-        return this.citynameOperator;
+    public String getCityname1Operator() {
+        return this.cityname1Operator;
     }
 
-    public void setCitynameOperator(String citynameOperator) {
-        this.citynameOperator = citynameOperator;
+    public void setCityname1Operator(String cityname1Operator) {
+        this.cityname1Operator = cityname1Operator;
     }
 
-    public String getEnabled() {
-        return this.enabled;
+    public String getEnabled1() {
+        return this.enabled1;
     }
 
-    public void setEnabled(String enabled) {
-        this.enabled = enabled;
+    public void setEnabled1(String enabled1) {
+        this.enabled1 = enabled1;
     }
 
-    public String getEnabledOperator() {
-        return this.enabledOperator;
+    public String getEnabled1Operator() {
+        return this.enabled1Operator;
     }
 
-    public void setEnabledOperator(String enabledOperator) {
-        this.enabledOperator = enabledOperator;
-    }
-
-    public String getApplicationtime() {
-        return this.applicationtime;
-    }
-
-    public void setApplicationtime(String applicationtime) {
-        this.applicationtime = applicationtime;
+    public void setEnabled1Operator(String enabled1Operator) {
+        this.enabled1Operator = enabled1Operator;
     }
 
     public String getApplicationtime1() {
@@ -93,68 +85,76 @@ public class CityinformationEOPage extends BasePage {
         this.applicationtime1 = applicationtime1;
     }
 
-    public String getApplicationtime2() {
-        return this.applicationtime2;
+    public String getApplicationtime11() {
+        return this.applicationtime11;
     }
 
-    public void setApplicationtime2(String applicationtime2) {
-        this.applicationtime2 = applicationtime2;
+    public void setApplicationtime11(String applicationtime11) {
+        this.applicationtime11 = applicationtime11;
     }
 
-    public String getApplicationtimeOperator() {
-        return this.applicationtimeOperator;
+    public String getApplicationtime12() {
+        return this.applicationtime12;
     }
 
-    public void setApplicationtimeOperator(String applicationtimeOperator) {
-        this.applicationtimeOperator = applicationtimeOperator;
+    public void setApplicationtime12(String applicationtime12) {
+        this.applicationtime12 = applicationtime12;
     }
 
-    public String getCityintroduction() {
-        return this.cityintroduction;
+    public String getApplicationtime1Operator() {
+        return this.applicationtime1Operator;
     }
 
-    public void setCityintroduction(String cityintroduction) {
-        this.cityintroduction = cityintroduction;
+    public void setApplicationtime1Operator(String applicationtime1Operator) {
+        this.applicationtime1Operator = applicationtime1Operator;
     }
 
-    public String getCityintroductionOperator() {
-        return this.cityintroductionOperator;
+    public String getCityintroduction1() {
+        return this.cityintroduction1;
     }
 
-    public void setCityintroductionOperator(String cityintroductionOperator) {
-        this.cityintroductionOperator = cityintroductionOperator;
+    public void setCityintroduction1(String cityintroduction1) {
+        this.cityintroduction1 = cityintroduction1;
     }
 
-    public String getCitycoordinates() {
-        return this.citycoordinates;
+    public String getCityintroduction1Operator() {
+        return this.cityintroduction1Operator;
     }
 
-    public void setCitycoordinates(String citycoordinates) {
-        this.citycoordinates = citycoordinates;
+    public void setCityintroduction1Operator(String cityintroduction1Operator) {
+        this.cityintroduction1Operator = cityintroduction1Operator;
     }
 
-    public String getCitycoordinatesOperator() {
-        return this.citycoordinatesOperator;
+    public String getCitycoordinates1() {
+        return this.citycoordinates1;
     }
 
-    public void setCitycoordinatesOperator(String citycoordinatesOperator) {
-        this.citycoordinatesOperator = citycoordinatesOperator;
+    public void setCitycoordinates1(String citycoordinates1) {
+        this.citycoordinates1 = citycoordinates1;
     }
 
-    public String getDelflag() {
-        return this.delflag;
+    public String getCitycoordinates1Operator() {
+        return this.citycoordinates1Operator;
     }
 
-    public void setDelflag(String delflag) {
-        this.delflag = delflag;
+    public void setCitycoordinates1Operator(String citycoordinates1Operator) {
+        this.citycoordinates1Operator = citycoordinates1Operator;
     }
 
-    public String getDelflagOperator() {
-        return this.delflagOperator;
+    public String getDelflag1() {
+        return this.delflag1;
     }
 
-    public void setDelflagOperator(String delflagOperator) {
-        this.delflagOperator = delflagOperator;
+    public void setDelflag1(String delflag1) {
+        this.delflag1 = delflag1;
+    }
+
+    public String getDelflag1Operator() {
+        return this.delflag1Operator;
+    }
+
+    public void setDelflag1Operator(String delflag1Operator) {
+        this.delflag1Operator = delflag1Operator;
     }
 
 }

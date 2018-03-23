@@ -12,7 +12,7 @@ import java.util.Date;
  */
 public class SchoolinformationmanagementEO extends BaseEntity {
 
-    private String pkschoolinformation;
+    private String pkSchoolinformation;
     private String schoolname;
     private String schooladdress;
     private String pkregion;
@@ -24,7 +24,7 @@ public class SchoolinformationmanagementEO extends BaseEntity {
     /**
      * java字段名转换为原始数据库列名。<b>如果不存在则返回null</b><br>
      * <p>字段列表：</p>
-     * <li>pkschoolinformation -> pkschoolinformation</li>
+     * <li>pkSchoolinformation -> pk_schoolinformation</li>
      * <li>schoolname -> schoolname</li>
      * <li>schooladdress -> schooladdress</li>
      * <li>pkregion -> pkregion</li>
@@ -35,7 +35,7 @@ public class SchoolinformationmanagementEO extends BaseEntity {
     public static String fieldToColumn(String fieldName) {
         if (fieldName == null) return null;
         switch (fieldName) {
-            case "pkschoolinformation": return "pkschoolinformation";
+            case "pkSchoolinformation": return "pk_schoolinformation";
             case "schoolname": return "schoolname";
             case "schooladdress": return "schooladdress";
             case "pkregion": return "pkregion";
@@ -49,7 +49,7 @@ public class SchoolinformationmanagementEO extends BaseEntity {
     /**
      * 原始数据库列名转换为java字段名。<b>如果不存在则返回null</b><br>
      * <p>字段列表：</p>
-     * <li>pkschoolinformation -> pkschoolinformation</li>
+     * <li>pk_schoolinformation -> pkSchoolinformation</li>
      * <li>schoolname -> schoolname</li>
      * <li>schooladdress -> schooladdress</li>
      * <li>pkregion -> pkregion</li>
@@ -60,7 +60,7 @@ public class SchoolinformationmanagementEO extends BaseEntity {
     public static String columnToField(String columnName) {
         if (columnName == null) return null;
         switch (columnName) {
-            case "pkschoolinformation": return "pkschoolinformation";
+            case "pk_schoolinformation": return "pkSchoolinformation";
             case "schoolname": return "schoolname";
             case "schooladdress": return "schooladdress";
             case "pkregion": return "pkregion";
@@ -72,13 +72,13 @@ public class SchoolinformationmanagementEO extends BaseEntity {
     }
     
     /**  **/
-    public String getPkschoolinformation() {
-        return this.pkschoolinformation;
+    public String getPkSchoolinformation() {
+        return this.pkSchoolinformation;
     }
 
     /**  **/
-    public void setPkschoolinformation(String pkschoolinformation) {
-        this.pkschoolinformation = pkschoolinformation;
+    public void setPkSchoolinformation(String pkSchoolinformation) {
+        this.pkSchoolinformation = pkSchoolinformation;
     }
 
     /**  **/

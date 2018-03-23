@@ -23,7 +23,7 @@ import io.swagger.annotations.ApiOperation;
 
 
 @RestController
-@RequestMapping("/${restPath}/sys/announce")
+@RequestMapping("/sys/announce")
 @Api(description = "|AnnounceEO|")
 public class AnnounceEOController extends BaseController<AnnounceEO>{
 

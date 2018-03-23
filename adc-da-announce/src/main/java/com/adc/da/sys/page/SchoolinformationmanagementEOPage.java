@@ -12,8 +12,8 @@ import java.util.Date;
  */
 public class SchoolinformationmanagementEOPage extends BasePage {
 
-    private String pkschoolinformation;
-    private String pkschoolinformationOperator = "=";
+    private String pkSchoolinformation;
+    private String pkSchoolinformationOperator = "=";
     private String schoolname;
     private String schoolnameOperator = "=";
     private String schooladdress;
@@ -29,20 +29,20 @@ public class SchoolinformationmanagementEOPage extends BasePage {
     private String pkcity;
     private String pkcityOperator = "=";
 
-    public String getPkschoolinformation() {
-        return this.pkschoolinformation;
+    public String getPkSchoolinformation() {
+        return this.pkSchoolinformation;
     }
 
-    public void setPkschoolinformation(String pkschoolinformation) {
-        this.pkschoolinformation = pkschoolinformation;
+    public void setPkSchoolinformation(String pkSchoolinformation) {
+        this.pkSchoolinformation = pkSchoolinformation;
     }
 
-    public String getPkschoolinformationOperator() {
-        return this.pkschoolinformationOperator;
+    public String getPkSchoolinformationOperator() {
+        return this.pkSchoolinformationOperator;
     }
 
-    public void setPkschoolinformationOperator(String pkschoolinformationOperator) {
-        this.pkschoolinformationOperator = pkschoolinformationOperator;
+    public void setPkSchoolinformationOperator(String pkSchoolinformationOperator) {
+        this.pkSchoolinformationOperator = pkSchoolinformationOperator;
     }
 
     public String getSchoolname() {

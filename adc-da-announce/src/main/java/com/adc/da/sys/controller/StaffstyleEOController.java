@@ -21,8 +21,9 @@ import com.adc.da.util.http.PageInfo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
+
 @RestController
-@RequestMapping("/${restPath}/sys/staffstyle")
+@RequestMapping("/sys/staffstyle")
 @Api(description = "|StaffstyleEO|")
 public class StaffstyleEOController extends BaseController<StaffstyleEO>{
 
@@ -45,9 +46,9 @@ public class StaffstyleEOController extends BaseController<StaffstyleEO>{
 	}
 
     @ApiOperation(value = "|StaffstyleEO|详情")
-    @GetMapping("/{pkstaff}")
-    public ResponseMessage<StaffstyleEO> find(@PathVariable String pkstaff) throws Exception {
-        return Result.success(staffstyleEOService.selectByPrimaryKey(pkstaff));
+    @GetMapping("/{pkStaff}")
+    public ResponseMessage<StaffstyleEO> find(@PathVariable String pkStaff) throws Exception {
+        return Result.success(staffstyleEOService.selectByPrimaryKey(pkStaff));
     }
 
     @ApiOperation(value = "|StaffstyleEO|新增")
@@ -65,10 +66,10 @@ public class StaffstyleEOController extends BaseController<StaffstyleEO>{
     }
 
     @ApiOperation(value = "|StaffstyleEO|删除")
-    @DeleteMapping("/{pkstaff}")
-    public ResponseMessage delete(@PathVariable String pkstaff) throws Exception {
-        staffstyleEOService.deleteByPrimaryKey(pkstaff);
-        logger.info("delete from TS_STAFFSTYLE where pkstaff = {}", pkstaff);
+    @DeleteMapping("/{pkStaff}")
+    public ResponseMessage delete(@PathVariable String pkStaff) throws Exception {
+        staffstyleEOService.deleteByPrimaryKey(pkStaff);
+        logger.info("delete from TS_STAFFSTYLE where pkStaff = {}", pkStaff);
         return Result.success();
     }
 

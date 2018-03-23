@@ -21,8 +21,9 @@ import com.adc.da.util.http.PageInfo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
+
 @RestController
-@RequestMapping("/${restPath}/sys/cityinformation")
+@RequestMapping("/sys/cityinformation")
 @Api(description = "|CityinformationEO|")
 public class CityinformationEOController extends BaseController<CityinformationEO>{
 
@@ -45,9 +46,9 @@ public class CityinformationEOController extends BaseController<CityinformationE
 	}
 
     @ApiOperation(value = "|CityinformationEO|详情")
-    @GetMapping("/{pkcity}")
-    public ResponseMessage<CityinformationEO> find(@PathVariable String pkcity) throws Exception {
-        return Result.success(cityinformationEOService.selectByPrimaryKey(pkcity));
+    @GetMapping("/{pkCity}")
+    public ResponseMessage<CityinformationEO> find(@PathVariable String pkCity) throws Exception {
+        return Result.success(cityinformationEOService.selectByPrimaryKey(pkCity));
     }
 
     @ApiOperation(value = "|CityinformationEO|新增")
@@ -65,10 +66,10 @@ public class CityinformationEOController extends BaseController<CityinformationE
     }
 
     @ApiOperation(value = "|CityinformationEO|删除")
-    @DeleteMapping("/{pkcity}")
-    public ResponseMessage delete(@PathVariable String pkcity) throws Exception {
-        cityinformationEOService.deleteByPrimaryKey(pkcity);
-        logger.info("delete from TS_CITYINFORMATION where pkcity = {}", pkcity);
+    @DeleteMapping("/{pkCity}")
+    public ResponseMessage delete(@PathVariable String pkCity) throws Exception {
+        cityinformationEOService.deleteByPrimaryKey(pkCity);
+        logger.info("delete from TS_CITYINFORMATION where pkCity = {}", pkCity);
         return Result.success();
     }
 

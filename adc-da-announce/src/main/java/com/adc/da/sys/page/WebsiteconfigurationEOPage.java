@@ -14,32 +14,32 @@ public class WebsiteconfigurationEOPage extends BasePage {
 
     private String pkWebsiteconfiguration;
     private String pkWebsiteconfigurationOperator = "=";
-    private String configurationtype;
-    private String configurationtypeOperator = "=";
-    private String title;
-    private String titleOperator = "=";
-    private String imageurl;
-    private String imageurlOperator = "=";
-    private String content;
-    private String contentOperator = "=";
-    private String processsequencenumber;
-    private String processsequencenumberOperator = "=";
-    private String explicitstate;
-    private String explicitstateOperator = "=";
-    private String limitquantity;
-    private String limitquantityOperator = "=";
-    private String effective;
-    private String effectiveOperator = "=";
-    private String createtime;
-    private String createtime1;
-    private String createtime2;
-    private String createtimeOperator = "=";
-    private String updatetime;
+    private String configurationtype1;
+    private String configurationtype1Operator = "=";
+    private String title1;
+    private String title1Operator = "=";
+    private String imageurl1;
+    private String imageurl1Operator = "=";
+    private String content1;
+    private String content1Operator = "=";
+    private String processsequencenumber1;
+    private String processsequencenumber1Operator = "=";
+    private String explicitstate1;
+    private String explicitstate1Operator = "=";
+    private String limitquantity1;
+    private String limitquantity1Operator = "=";
+    private String effective1;
+    private String effective1Operator = "=";
+    private String createTime1;
+    private String createTime11;
+    private String createTime12;
+    private String createTime1Operator = "=";
     private String updatetime1;
-    private String updatetime2;
-    private String updatetimeOperator = "=";
-    private String deleteflag;
-    private String deleteflagOperator = "=";
+    private String updatetime11;
+    private String updatetime12;
+    private String updatetime1Operator = "=";
+    private String deleteflag1;
+    private String deleteflag1Operator = "=";
 
     public String getPkWebsiteconfiguration() {
         return this.pkWebsiteconfiguration;
@@ -57,172 +57,164 @@ public class WebsiteconfigurationEOPage extends BasePage {
         this.pkWebsiteconfigurationOperator = pkWebsiteconfigurationOperator;
     }
 
-    public String getConfigurationtype() {
-        return this.configurationtype;
+    public String getConfigurationtype1() {
+        return this.configurationtype1;
     }
 
-    public void setConfigurationtype(String configurationtype) {
-        this.configurationtype = configurationtype;
+    public void setConfigurationtype1(String configurationtype1) {
+        this.configurationtype1 = configurationtype1;
     }
 
-    public String getConfigurationtypeOperator() {
-        return this.configurationtypeOperator;
+    public String getConfigurationtype1Operator() {
+        return this.configurationtype1Operator;
     }
 
-    public void setConfigurationtypeOperator(String configurationtypeOperator) {
-        this.configurationtypeOperator = configurationtypeOperator;
+    public void setConfigurationtype1Operator(String configurationtype1Operator) {
+        this.configurationtype1Operator = configurationtype1Operator;
     }
 
-    public String getTitle() {
-        return this.title;
+    public String getTitle1() {
+        return this.title1;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setTitle1(String title1) {
+        this.title1 = title1;
     }
 
-    public String getTitleOperator() {
-        return this.titleOperator;
+    public String getTitle1Operator() {
+        return this.title1Operator;
     }
 
-    public void setTitleOperator(String titleOperator) {
-        this.titleOperator = titleOperator;
+    public void setTitle1Operator(String title1Operator) {
+        this.title1Operator = title1Operator;
     }
 
-    public String getImageurl() {
-        return this.imageurl;
+    public String getImageurl1() {
+        return this.imageurl1;
     }
 
-    public void setImageurl(String imageurl) {
-        this.imageurl = imageurl;
+    public void setImageurl1(String imageurl1) {
+        this.imageurl1 = imageurl1;
     }
 
-    public String getImageurlOperator() {
-        return this.imageurlOperator;
+    public String getImageurl1Operator() {
+        return this.imageurl1Operator;
     }
 
-    public void setImageurlOperator(String imageurlOperator) {
-        this.imageurlOperator = imageurlOperator;
+    public void setImageurl1Operator(String imageurl1Operator) {
+        this.imageurl1Operator = imageurl1Operator;
     }
 
-    public String getContent() {
-        return this.content;
+    public String getContent1() {
+        return this.content1;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setContent1(String content1) {
+        this.content1 = content1;
     }
 
-    public String getContentOperator() {
-        return this.contentOperator;
+    public String getContent1Operator() {
+        return this.content1Operator;
     }
 
-    public void setContentOperator(String contentOperator) {
-        this.contentOperator = contentOperator;
+    public void setContent1Operator(String content1Operator) {
+        this.content1Operator = content1Operator;
     }
 
-    public String getProcesssequencenumber() {
-        return this.processsequencenumber;
+    public String getProcesssequencenumber1() {
+        return this.processsequencenumber1;
     }
 
-    public void setProcesssequencenumber(String processsequencenumber) {
-        this.processsequencenumber = processsequencenumber;
+    public void setProcesssequencenumber1(String processsequencenumber1) {
+        this.processsequencenumber1 = processsequencenumber1;
     }
 
-    public String getProcesssequencenumberOperator() {
-        return this.processsequencenumberOperator;
+    public String getProcesssequencenumber1Operator() {
+        return this.processsequencenumber1Operator;
     }
 
-    public void setProcesssequencenumberOperator(String processsequencenumberOperator) {
-        this.processsequencenumberOperator = processsequencenumberOperator;
+    public void setProcesssequencenumber1Operator(String processsequencenumber1Operator) {
+        this.processsequencenumber1Operator = processsequencenumber1Operator;
     }
 
-    public String getExplicitstate() {
-        return this.explicitstate;
+    public String getExplicitstate1() {
+        return this.explicitstate1;
     }
 
-    public void setExplicitstate(String explicitstate) {
-        this.explicitstate = explicitstate;
+    public void setExplicitstate1(String explicitstate1) {
+        this.explicitstate1 = explicitstate1;
     }
 
-    public String getExplicitstateOperator() {
-        return this.explicitstateOperator;
+    public String getExplicitstate1Operator() {
+        return this.explicitstate1Operator;
     }
 
-    public void setExplicitstateOperator(String explicitstateOperator) {
-        this.explicitstateOperator = explicitstateOperator;
+    public void setExplicitstate1Operator(String explicitstate1Operator) {
+        this.explicitstate1Operator = explicitstate1Operator;
     }
 
-    public String getLimitquantity() {
-        return this.limitquantity;
+    public String getLimitquantity1() {
+        return this.limitquantity1;
     }
 
-    public void setLimitquantity(String limitquantity) {
-        this.limitquantity = limitquantity;
+    public void setLimitquantity1(String limitquantity1) {
+        this.limitquantity1 = limitquantity1;
     }
 
-    public String getLimitquantityOperator() {
-        return this.limitquantityOperator;
+    public String getLimitquantity1Operator() {
+        return this.limitquantity1Operator;
     }
 
-    public void setLimitquantityOperator(String limitquantityOperator) {
-        this.limitquantityOperator = limitquantityOperator;
+    public void setLimitquantity1Operator(String limitquantity1Operator) {
+        this.limitquantity1Operator = limitquantity1Operator;
     }
 
-    public String getEffective() {
-        return this.effective;
+    public String getEffective1() {
+        return this.effective1;
     }
 
-    public void setEffective(String effective) {
-        this.effective = effective;
+    public void setEffective1(String effective1) {
+        this.effective1 = effective1;
     }
 
-    public String getEffectiveOperator() {
-        return this.effectiveOperator;
+    public String getEffective1Operator() {
+        return this.effective1Operator;
     }
 
-    public void setEffectiveOperator(String effectiveOperator) {
-        this.effectiveOperator = effectiveOperator;
+    public void setEffective1Operator(String effective1Operator) {
+        this.effective1Operator = effective1Operator;
     }
 
-    public String getCreatetime() {
-        return this.createtime;
+    public String getCreateTime1() {
+        return this.createTime1;
     }
 
-    public void setCreatetime(String createtime) {
-        this.createtime = createtime;
+    public void setCreateTime1(String createTime1) {
+        this.createTime1 = createTime1;
     }
 
-    public String getCreatetime1() {
-        return this.createtime1;
+    public String getCreateTime11() {
+        return this.createTime11;
     }
 
-    public void setCreatetime1(String createtime1) {
-        this.createtime1 = createtime1;
+    public void setCreateTime11(String createTime11) {
+        this.createTime11 = createTime11;
     }
 
-    public String getCreatetime2() {
-        return this.createtime2;
+    public String getCreateTime12() {
+        return this.createTime12;
     }
 
-    public void setCreatetime2(String createtime2) {
-        this.createtime2 = createtime2;
+    public void setCreateTime12(String createTime12) {
+        this.createTime12 = createTime12;
     }
 
-    public String getCreatetimeOperator() {
-        return this.createtimeOperator;
+    public String getCreateTime1Operator() {
+        return this.createTime1Operator;
     }
 
-    public void setCreatetimeOperator(String createtimeOperator) {
-        this.createtimeOperator = createtimeOperator;
-    }
-
-    public String getUpdatetime() {
-        return this.updatetime;
-    }
-
-    public void setUpdatetime(String updatetime) {
-        this.updatetime = updatetime;
+    public void setCreateTime1Operator(String createTime1Operator) {
+        this.createTime1Operator = createTime1Operator;
     }
 
     public String getUpdatetime1() {
@@ -233,36 +225,44 @@ public class WebsiteconfigurationEOPage extends BasePage {
         this.updatetime1 = updatetime1;
     }
 
-    public String getUpdatetime2() {
-        return this.updatetime2;
+    public String getUpdatetime11() {
+        return this.updatetime11;
     }
 
-    public void setUpdatetime2(String updatetime2) {
-        this.updatetime2 = updatetime2;
+    public void setUpdatetime11(String updatetime11) {
+        this.updatetime11 = updatetime11;
     }
 
-    public String getUpdatetimeOperator() {
-        return this.updatetimeOperator;
+    public String getUpdatetime12() {
+        return this.updatetime12;
     }
 
-    public void setUpdatetimeOperator(String updatetimeOperator) {
-        this.updatetimeOperator = updatetimeOperator;
+    public void setUpdatetime12(String updatetime12) {
+        this.updatetime12 = updatetime12;
     }
 
-    public String getDeleteflag() {
-        return this.deleteflag;
+    public String getUpdatetime1Operator() {
+        return this.updatetime1Operator;
     }
 
-    public void setDeleteflag(String deleteflag) {
-        this.deleteflag = deleteflag;
+    public void setUpdatetime1Operator(String updatetime1Operator) {
+        this.updatetime1Operator = updatetime1Operator;
     }
 
-    public String getDeleteflagOperator() {
-        return this.deleteflagOperator;
+    public String getDeleteflag1() {
+        return this.deleteflag1;
     }
 
-    public void setDeleteflagOperator(String deleteflagOperator) {
-        this.deleteflagOperator = deleteflagOperator;
+    public void setDeleteflag1(String deleteflag1) {
+        this.deleteflag1 = deleteflag1;
+    }
+
+    public String getDeleteflag1Operator() {
+        return this.deleteflag1Operator;
+    }
+
+    public void setDeleteflag1Operator(String deleteflag1Operator) {
+        this.deleteflag1Operator = deleteflag1Operator;
     }
 
 }

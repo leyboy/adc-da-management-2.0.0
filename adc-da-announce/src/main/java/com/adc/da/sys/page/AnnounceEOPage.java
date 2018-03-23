@@ -14,16 +14,16 @@ public class AnnounceEOPage extends BasePage {
 
     private String pkAnnounce;
     private String pkAnnounceOperator = "=";
-    private String title;
-    private String titleOperator = "=";
-    private String content;
-    private String contentOperator = "=";
+    private String title1;
+    private String title1Operator = "=";
+    private String content1;
+    private String content1Operator = "=";
     private String expriyTime;
     private String expriyTime1;
     private String expriyTime2;
     private String expriyTimeOperator = "=";
-    private String state;
-    private String stateOperator = "=";
+    private String state1;
+    private String state1Operator = "=";
     private String announCecreator;
     private String announCecreatorOperator = "=";
     private String createTime;
@@ -53,36 +53,36 @@ public class AnnounceEOPage extends BasePage {
         this.pkAnnounceOperator = pkAnnounceOperator;
     }
 
-    public String getTitle() {
-        return this.title;
+    public String getTitle1() {
+        return this.title1;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setTitle1(String title1) {
+        this.title1 = title1;
     }
 
-    public String getTitleOperator() {
-        return this.titleOperator;
+    public String getTitle1Operator() {
+        return this.title1Operator;
     }
 
-    public void setTitleOperator(String titleOperator) {
-        this.titleOperator = titleOperator;
+    public void setTitle1Operator(String title1Operator) {
+        this.title1Operator = title1Operator;
     }
 
-    public String getContent() {
-        return this.content;
+    public String getContent1() {
+        return this.content1;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setContent1(String content1) {
+        this.content1 = content1;
     }
 
-    public String getContentOperator() {
-        return this.contentOperator;
+    public String getContent1Operator() {
+        return this.content1Operator;
     }
 
-    public void setContentOperator(String contentOperator) {
-        this.contentOperator = contentOperator;
+    public void setContent1Operator(String content1Operator) {
+        this.content1Operator = content1Operator;
     }
 
     public String getExpriyTime() {
@@ -117,20 +117,20 @@ public class AnnounceEOPage extends BasePage {
         this.expriyTimeOperator = expriyTimeOperator;
     }
 
-    public String getState() {
-        return this.state;
+    public String getState1() {
+        return this.state1;
     }
 
-    public void setState(String state) {
-        this.state = state;
+    public void setState1(String state1) {
+        this.state1 = state1;
     }
 
-    public String getStateOperator() {
-        return this.stateOperator;
+    public String getState1Operator() {
+        return this.state1Operator;
     }
 
-    public void setStateOperator(String stateOperator) {
-        this.stateOperator = stateOperator;
+    public void setState1Operator(String state1Operator) {
+        this.state1Operator = state1Operator;
     }
 
     public String getAnnounCecreator() {

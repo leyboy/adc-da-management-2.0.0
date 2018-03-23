@@ -4,22 +4,22 @@
   <!-- Result Map-->
   <resultMap id="BaseResultMap" type="com.adc.da.sys.entity.WebsiteconfigurationEO" >
     <id column="pk_websiteconfiguration" property="pkWebsiteconfiguration" />
-    <result column="configurationtype" property="configurationtype" />
-    <result column="title" property="title" />
-    <result column="imageurl" property="imageurl" />
-    <result column="content" property="content" />
-    <result column="processsequencenumber" property="processsequencenumber" />
-    <result column="explicitstate" property="explicitstate" />
-    <result column="limitquantity" property="limitquantity" />
-    <result column="effective" property="effective" />
-    <result column="createtime" property="createtime" />
-    <result column="updatetime" property="updatetime" />
-    <result column="deleteflag" property="deleteflag" />
+    <result column="configurationtype1" property="configurationtype1" />
+    <result column="title1" property="title1" />
+    <result column="imageurl1" property="imageurl1" />
+    <result column="content1" property="content1" />
+    <result column="processsequencenumber1" property="processsequencenumber1" />
+    <result column="explicitstate1" property="explicitstate1" />
+    <result column="limitquantity1" property="limitquantity1" />
+    <result column="effective1" property="effective1" />
+    <result column="create_time1" property="createTime1" />
+    <result column="updatetime1" property="updatetime1" />
+    <result column="deleteflag1" property="deleteflag1" />
   </resultMap>
 
   <!-- TS_WEBSITECONFIGURATION table all fields -->
   <sql id="Base_Column_List" >
-     pk_websiteconfiguration, configurationtype, title, imageurl, content, processsequencenumber, explicitstate, limitquantity, effective, createtime, updatetime, deleteflag
+     pk_websiteconfiguration, configurationtype1, title1, imageurl1, content1, processsequencenumber1, explicitstate1, limitquantity1, effective1, create_time1, updatetime1, deleteflag1
   </sql>
 
   <!-- 查询条件 -->
@@ -29,50 +29,50 @@
       <if test="pkWebsiteconfiguration != null" >
         and pk_websiteconfiguration ${pkWebsiteconfigurationOperator} #{pkWebsiteconfiguration}
       </if>
-      <if test="configurationtype != null" >
-        and configurationtype ${configurationtypeOperator} #{configurationtype}
+      <if test="configurationtype1 != null" >
+        and configurationtype1 ${configurationtype1Operator} #{configurationtype1}
       </if>
-      <if test="title != null" >
-        and title ${titleOperator} #{title}
+      <if test="title1 != null" >
+        and title1 ${title1Operator} #{title1}
       </if>
-      <if test="imageurl != null" >
-        and imageurl ${imageurlOperator} #{imageurl}
+      <if test="imageurl1 != null" >
+        and imageurl1 ${imageurl1Operator} #{imageurl1}
       </if>
-      <if test="content != null" >
-        and content ${contentOperator} #{content}
+      <if test="content1 != null" >
+        and content1 ${content1Operator} #{content1}
       </if>
-      <if test="processsequencenumber != null" >
-        and processsequencenumber ${processsequencenumberOperator} #{processsequencenumber}
+      <if test="processsequencenumber1 != null" >
+        and processsequencenumber1 ${processsequencenumber1Operator} #{processsequencenumber1}
       </if>
-      <if test="explicitstate != null" >
-        and explicitstate ${explicitstateOperator} #{explicitstate}
+      <if test="explicitstate1 != null" >
+        and explicitstate1 ${explicitstate1Operator} #{explicitstate1}
       </if>
-      <if test="limitquantity != null" >
-        and limitquantity ${limitquantityOperator} #{limitquantity}
+      <if test="limitquantity1 != null" >
+        and limitquantity1 ${limitquantity1Operator} #{limitquantity1}
       </if>
-      <if test="effective != null" >
-        and effective ${effectiveOperator} #{effective}
+      <if test="effective1 != null" >
+        and effective1 ${effective1Operator} #{effective1}
       </if>
-      <if test="createtime != null" >
-        and createtime ${createtimeOperator} #{createtime}
+      <if test="createTime1 != null" >
+        and create_time1 ${createTime1Operator} #{createTime1}
       </if>
-      <if test="createtime1 != null" >
-        and createtime &gt;= #{createtime1}
+      <if test="createTime11 != null" >
+        and create_time1 &gt;= #{createTime11}
       </if>
-      <if test="createtime2 != null" >
-        and createtime &lt;= #{createtime2}
-      </if>
-      <if test="updatetime != null" >
-        and updatetime ${updatetimeOperator} #{updatetime}
+      <if test="createTime12 != null" >
+        and create_time1 &lt;= #{createTime12}
       </if>
       <if test="updatetime1 != null" >
-        and updatetime &gt;= #{updatetime1}
+        and updatetime1 ${updatetime1Operator} #{updatetime1}
       </if>
-      <if test="updatetime2 != null" >
-        and updatetime &lt;= #{updatetime2}
+      <if test="updatetime11 != null" >
+        and updatetime1 &gt;= #{updatetime11}
       </if>
-      <if test="deleteflag != null" >
-        and deleteflag ${deleteflagOperator} #{deleteflag}
+      <if test="updatetime12 != null" >
+        and updatetime1 &lt;= #{updatetime12}
+      </if>
+      <if test="deleteflag1 != null" >
+        and deleteflag1 ${deleteflag1Operator} #{deleteflag1}
       </if>
     </trim>
   </sql>
@@ -83,7 +83,7 @@
         SELECT SEQ_TS_WEBSITECONFIGURATION.NEXTVAL FROM DUAL
     </selectKey> -->
     insert into TS_WEBSITECONFIGURATION(<include refid="Base_Column_List" />)
-    values (#{pkWebsiteconfiguration, jdbcType=VARCHAR}, #{configurationtype, jdbcType=INTEGER}, #{title, jdbcType=VARCHAR}, #{imageurl, jdbcType=VARCHAR}, #{content, jdbcType=VARCHAR}, #{processsequencenumber, jdbcType=VARCHAR}, #{explicitstate, jdbcType=VARCHAR}, #{limitquantity, jdbcType=VARCHAR}, #{effective, jdbcType=VARCHAR}, #{createtime, jdbcType=TIMESTAMP}, #{updatetime, jdbcType=TIMESTAMP}, #{deleteflag, jdbcType=INTEGER})
+    values (#{pkWebsiteconfiguration, jdbcType=VARCHAR}, #{configurationtype1, jdbcType=INTEGER}, #{title1, jdbcType=VARCHAR}, #{imageurl1, jdbcType=VARCHAR}, #{content1, jdbcType=VARCHAR}, #{processsequencenumber1, jdbcType=VARCHAR}, #{explicitstate1, jdbcType=VARCHAR}, #{limitquantity1, jdbcType=VARCHAR}, #{effective1, jdbcType=VARCHAR}, #{createTime1, jdbcType=TIMESTAMP}, #{updatetime1, jdbcType=TIMESTAMP}, #{deleteflag1, jdbcType=INTEGER})
   </insert>
 
   <!-- 动态插入记录 主键是序列 -->
@@ -94,48 +94,48 @@
         insert into TS_WEBSITECONFIGURATION
     <trim prefix="(" suffix=")" suffixOverrides="," >
                 <if test="pkWebsiteconfiguration != null" >pk_websiteconfiguration,</if>
-                <if test="configurationtype != null" >configurationtype,</if>
-                <if test="title != null" >title,</if>
-                <if test="imageurl != null" >imageurl,</if>
-                <if test="content != null" >content,</if>
-                <if test="processsequencenumber != null" >processsequencenumber,</if>
-                <if test="explicitstate != null" >explicitstate,</if>
-                <if test="limitquantity != null" >limitquantity,</if>
-                <if test="effective != null" >effective,</if>
-                <if test="createtime != null" >createtime,</if>
-                <if test="updatetime != null" >updatetime,</if>
-                <if test="deleteflag != null" >deleteflag,</if>
+                <if test="configurationtype1 != null" >configurationtype1,</if>
+                <if test="title1 != null" >title1,</if>
+                <if test="imageurl1 != null" >imageurl1,</if>
+                <if test="content1 != null" >content1,</if>
+                <if test="processsequencenumber1 != null" >processsequencenumber1,</if>
+                <if test="explicitstate1 != null" >explicitstate1,</if>
+                <if test="limitquantity1 != null" >limitquantity1,</if>
+                <if test="effective1 != null" >effective1,</if>
+                <if test="createTime1 != null" >create_time1,</if>
+                <if test="updatetime1 != null" >updatetime1,</if>
+                <if test="deleteflag1 != null" >deleteflag1,</if>
             </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
                 <if test="pkWebsiteconfiguration != null" >#{pkWebsiteconfiguration, jdbcType=VARCHAR},</if>
-                <if test="configurationtype != null" >#{configurationtype, jdbcType=INTEGER},</if>
-                <if test="title != null" >#{title, jdbcType=VARCHAR},</if>
-                <if test="imageurl != null" >#{imageurl, jdbcType=VARCHAR},</if>
-                <if test="content != null" >#{content, jdbcType=VARCHAR},</if>
-                <if test="processsequencenumber != null" >#{processsequencenumber, jdbcType=VARCHAR},</if>
-                <if test="explicitstate != null" >#{explicitstate, jdbcType=VARCHAR},</if>
-                <if test="limitquantity != null" >#{limitquantity, jdbcType=VARCHAR},</if>
-                <if test="effective != null" >#{effective, jdbcType=VARCHAR},</if>
-                <if test="createtime != null" >#{createtime, jdbcType=TIMESTAMP},</if>
-                <if test="updatetime != null" >#{updatetime, jdbcType=TIMESTAMP},</if>
-                <if test="deleteflag != null" >#{deleteflag, jdbcType=INTEGER},</if>
+                <if test="configurationtype1 != null" >#{configurationtype1, jdbcType=INTEGER},</if>
+                <if test="title1 != null" >#{title1, jdbcType=VARCHAR},</if>
+                <if test="imageurl1 != null" >#{imageurl1, jdbcType=VARCHAR},</if>
+                <if test="content1 != null" >#{content1, jdbcType=VARCHAR},</if>
+                <if test="processsequencenumber1 != null" >#{processsequencenumber1, jdbcType=VARCHAR},</if>
+                <if test="explicitstate1 != null" >#{explicitstate1, jdbcType=VARCHAR},</if>
+                <if test="limitquantity1 != null" >#{limitquantity1, jdbcType=VARCHAR},</if>
+                <if test="effective1 != null" >#{effective1, jdbcType=VARCHAR},</if>
+                <if test="createTime1 != null" >#{createTime1, jdbcType=TIMESTAMP},</if>
+                <if test="updatetime1 != null" >#{updatetime1, jdbcType=TIMESTAMP},</if>
+                <if test="deleteflag1 != null" >#{deleteflag1, jdbcType=INTEGER},</if>
             </trim>
   </insert>
 
   <!-- 根据pk，修改记录-->
   <update id="updateByPrimaryKey" parameterType="com.adc.da.sys.entity.WebsiteconfigurationEO" >
     update TS_WEBSITECONFIGURATION
-       set  configurationtype = #{configurationtype},
-            title = #{title},
-            imageurl = #{imageurl},
-            content = #{content},
-            processsequencenumber = #{processsequencenumber},
-            explicitstate = #{explicitstate},
-            limitquantity = #{limitquantity},
-            effective = #{effective},
-            createtime = #{createtime},
-            updatetime = #{updatetime},
-            deleteflag = #{deleteflag}
+       set  configurationtype1 = #{configurationtype1},
+            title1 = #{title1},
+            imageurl1 = #{imageurl1},
+            content1 = #{content1},
+            processsequencenumber1 = #{processsequencenumber1},
+            explicitstate1 = #{explicitstate1},
+            limitquantity1 = #{limitquantity1},
+            effective1 = #{effective1},
+            create_time1 = #{createTime1},
+            updatetime1 = #{updatetime1},
+            deleteflag1 = #{deleteflag1}
      where  pk_websiteconfiguration = #{pkWebsiteconfiguration}
   </update>
 
@@ -143,38 +143,38 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.adc.da.sys.entity.WebsiteconfigurationEO" >
     update TS_WEBSITECONFIGURATION
     <set >
-      <if test="configurationtype != null" >
-        configurationtype = #{configurationtype},
+      <if test="configurationtype1 != null" >
+        configurationtype1 = #{configurationtype1},
       </if>
-      <if test="title != null" >
-        title = #{title},
+      <if test="title1 != null" >
+        title1 = #{title1},
       </if>
-      <if test="imageurl != null" >
-        imageurl = #{imageurl},
+      <if test="imageurl1 != null" >
+        imageurl1 = #{imageurl1},
       </if>
-      <if test="content != null" >
-        content = #{content},
+      <if test="content1 != null" >
+        content1 = #{content1},
       </if>
-      <if test="processsequencenumber != null" >
-        processsequencenumber = #{processsequencenumber},
+      <if test="processsequencenumber1 != null" >
+        processsequencenumber1 = #{processsequencenumber1},
       </if>
-      <if test="explicitstate != null" >
-        explicitstate = #{explicitstate},
+      <if test="explicitstate1 != null" >
+        explicitstate1 = #{explicitstate1},
       </if>
-      <if test="limitquantity != null" >
-        limitquantity = #{limitquantity},
+      <if test="limitquantity1 != null" >
+        limitquantity1 = #{limitquantity1},
       </if>
-      <if test="effective != null" >
-        effective = #{effective},
+      <if test="effective1 != null" >
+        effective1 = #{effective1},
       </if>
-      <if test="createtime != null" >
-        createtime = #{createtime},
+      <if test="createTime1 != null" >
+        create_time1 = #{createTime1},
       </if>
-      <if test="updatetime != null" >
-        updatetime = #{updatetime},
+      <if test="updatetime1 != null" >
+        updatetime1 = #{updatetime1},
       </if>
-      <if test="deleteflag != null" >
-        deleteflag = #{deleteflag},
+      <if test="deleteflag1 != null" >
+        deleteflag1 = #{deleteflag1},
       </if>
     </set>
      where pk_websiteconfiguration = #{pkWebsiteconfiguration}

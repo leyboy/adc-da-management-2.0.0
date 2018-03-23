@@ -22,7 +22,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 @RestController
-@RequestMapping("/${restPath}/sys/websiteconfiguration")
+@RequestMapping("/sys/websiteconfiguration")
 @Api(description = "|WebsiteconfigurationEO|")
 public class WebsiteconfigurationEOController extends BaseController<WebsiteconfigurationEO>{
 

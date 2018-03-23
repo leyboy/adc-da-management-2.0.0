@@ -13,11 +13,11 @@ import java.util.Date;
 public class AnnounceEO extends BaseEntity {
 
     private String pkAnnounce;
-    private String title;
-    private String content;
+    private String title1;
+    private String content1;
     @org.springframework.format.annotation.DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date expriyTime;
-    private Integer state;
+    private Integer state1;
     private String announCecreator;
     @org.springframework.format.annotation.DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date createTime;
@@ -29,10 +29,10 @@ public class AnnounceEO extends BaseEntity {
      * java字段名转换为原始数据库列名。<b>如果不存在则返回null</b><br>
      * <p>字段列表：</p>
      * <li>pkAnnounce -> pk_announce</li>
-     * <li>title -> title</li>
-     * <li>content -> content</li>
+     * <li>title1 -> title1</li>
+     * <li>content1 -> content1</li>
      * <li>expriyTime -> expriy_time</li>
-     * <li>state -> state</li>
+     * <li>state1 -> state1</li>
      * <li>announCecreator -> announ_cecreator</li>
      * <li>createTime -> create_time</li>
      * <li>updateTime1 -> update_time1</li>
@@ -42,10 +42,10 @@ public class AnnounceEO extends BaseEntity {
         if (fieldName == null) return null;
         switch (fieldName) {
             case "pkAnnounce": return "pk_announce";
-            case "title": return "title";
-            case "content": return "content";
+            case "title1": return "title1";
+            case "content1": return "content1";
             case "expriyTime": return "expriy_time";
-            case "state": return "state";
+            case "state1": return "state1";
             case "announCecreator": return "announ_cecreator";
             case "createTime": return "create_time";
             case "updateTime1": return "update_time1";
@@ -58,10 +58,10 @@ public class AnnounceEO extends BaseEntity {
      * 原始数据库列名转换为java字段名。<b>如果不存在则返回null</b><br>
      * <p>字段列表：</p>
      * <li>pk_announce -> pkAnnounce</li>
-     * <li>title -> title</li>
-     * <li>content -> content</li>
+     * <li>title1 -> title1</li>
+     * <li>content1 -> content1</li>
      * <li>expriy_time -> expriyTime</li>
-     * <li>state -> state</li>
+     * <li>state1 -> state1</li>
      * <li>announ_cecreator -> announCecreator</li>
      * <li>create_time -> createTime</li>
      * <li>update_time1 -> updateTime1</li>
@@ -71,10 +71,10 @@ public class AnnounceEO extends BaseEntity {
         if (columnName == null) return null;
         switch (columnName) {
             case "pk_announce": return "pkAnnounce";
-            case "title": return "title";
-            case "content": return "content";
+            case "title1": return "title1";
+            case "content1": return "content1";
             case "expriy_time": return "expriyTime";
-            case "state": return "state";
+            case "state1": return "state1";
             case "announ_cecreator": return "announCecreator";
             case "create_time": return "createTime";
             case "update_time1": return "updateTime1";
@@ -94,23 +94,23 @@ public class AnnounceEO extends BaseEntity {
     }
 
     /**  **/
-    public String getTitle() {
-        return this.title;
+    public String getTitle1() {
+        return this.title1;
     }
 
     /**  **/
-    public void setTitle(String title) {
-        this.title = title;
+    public void setTitle1(String title1) {
+        this.title1 = title1;
     }
 
     /**  **/
-    public String getContent() {
-        return this.content;
+    public String getContent1() {
+        return this.content1;
     }
 
     /**  **/
-    public void setContent(String content) {
-        this.content = content;
+    public void setContent1(String content1) {
+        this.content1 = content1;
     }
 
     /**  **/
@@ -124,13 +124,13 @@ public class AnnounceEO extends BaseEntity {
     }
 
     /**  **/
-    public Integer getState() {
-        return this.state;
+    public Integer getState1() {
+        return this.state1;
     }
 
     /**  **/
-    public void setState(Integer state) {
-        this.state = state;
+    public void setState1(Integer state1) {
+        this.state1 = state1;
     }
 
     /**  **/

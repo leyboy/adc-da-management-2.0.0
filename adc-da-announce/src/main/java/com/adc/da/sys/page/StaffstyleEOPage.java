@@ -13,8 +13,8 @@ import java.util.Date;
  */
 public class StaffstyleEOPage extends BasePage {
 
-    private String pkstaff;
-    private String pkstaffOperator = "=";
+    private String pkStaff;
+    private String pkStaffOperator = "=";
     private String titleName;
     private String titleNameOperator = "=";
     private String updateTime;
@@ -25,31 +25,31 @@ public class StaffstyleEOPage extends BasePage {
     private String createTime1;
     private String createTime2;
     private String createTimeOperator = "=";
-    private String state;
-    private String stateOperator = "=";
-    private String details;
-    private String detailsOperator = "=";
-    private String pictures;
-    private String picturesOperator = "=";
-    private String view;
-    private String viewOperator = "=";
+    private String state1;
+    private String state1Operator = "=";
+    private String details1;
+    private String details1Operator = "=";
+    private String pictures1;
+    private String pictures1Operator = "=";
+    private String view1;
+    private String view1Operator = "=";
     private String delFlag;
     private String delFlagOperator = "=";
 
-    public String getPkstaff() {
-        return this.pkstaff;
+    public String getPkStaff() {
+        return this.pkStaff;
     }
 
-    public void setPkstaff(String pkstaff) {
-        this.pkstaff = pkstaff;
+    public void setPkStaff(String pkStaff) {
+        this.pkStaff = pkStaff;
     }
 
-    public String getPkstaffOperator() {
-        return this.pkstaffOperator;
+    public String getPkStaffOperator() {
+        return this.pkStaffOperator;
     }
 
-    public void setPkstaffOperator(String pkstaffOperator) {
-        this.pkstaffOperator = pkstaffOperator;
+    public void setPkStaffOperator(String pkStaffOperator) {
+        this.pkStaffOperator = pkStaffOperator;
     }
 
     public String getTitleName() {
@@ -132,68 +132,68 @@ public class StaffstyleEOPage extends BasePage {
         this.createTimeOperator = createTimeOperator;
     }
 
-    public String getState() {
-        return this.state;
+    public String getState1() {
+        return this.state1;
     }
 
-    public void setState(String state) {
-        this.state = state;
+    public void setState1(String state1) {
+        this.state1 = state1;
     }
 
-    public String getStateOperator() {
-        return this.stateOperator;
+    public String getState1Operator() {
+        return this.state1Operator;
     }
 
-    public void setStateOperator(String stateOperator) {
-        this.stateOperator = stateOperator;
+    public void setState1Operator(String state1Operator) {
+        this.state1Operator = state1Operator;
     }
 
-    public String getDetails() {
-        return this.details;
+    public String getDetails1() {
+        return this.details1;
     }
 
-    public void setDetails(String details) {
-        this.details = details;
+    public void setDetails1(String details1) {
+        this.details1 = details1;
     }
 
-    public String getDetailsOperator() {
-        return this.detailsOperator;
+    public String getDetails1Operator() {
+        return this.details1Operator;
     }
 
-    public void setDetailsOperator(String detailsOperator) {
-        this.detailsOperator = detailsOperator;
+    public void setDetails1Operator(String details1Operator) {
+        this.details1Operator = details1Operator;
     }
 
-    public String getPictures() {
-        return this.pictures;
+    public String getPictures1() {
+        return this.pictures1;
     }
 
-    public void setPictures(String pictures) {
-        this.pictures = pictures;
+    public void setPictures1(String pictures1) {
+        this.pictures1 = pictures1;
     }
 
-    public String getPicturesOperator() {
-        return this.picturesOperator;
+    public String getPictures1Operator() {
+        return this.pictures1Operator;
     }
 
-    public void setPicturesOperator(String picturesOperator) {
-        this.picturesOperator = picturesOperator;
+    public void setPictures1Operator(String pictures1Operator) {
+        this.pictures1Operator = pictures1Operator;
     }
 
-    public String getView() {
-        return this.view;
+    public String getView1() {
+        return this.view1;
     }
 
-    public void setView(String view) {
-        this.view = view;
+    public void setView1(String view1) {
+        this.view1 = view1;
     }
 
-    public String getViewOperator() {
-        return this.viewOperator;
+    public String getView1Operator() {
+        return this.view1Operator;
     }
 
-    public void setViewOperator(String viewOperator) {
-        this.viewOperator = viewOperator;
+    public void setView1Operator(String view1Operator) {
+        this.view1Operator = view1Operator;
     }
 
     public String getDelFlag() {

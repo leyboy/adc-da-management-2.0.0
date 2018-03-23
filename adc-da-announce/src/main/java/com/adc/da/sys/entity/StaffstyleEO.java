@@ -13,42 +13,42 @@ import java.util.Date;
  */
 public class StaffstyleEO extends BaseEntity {
 
-    private String pkstaff;
+    private String pkStaff;
     private String titleName;
     @org.springframework.format.annotation.DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date updateTime;
     @org.springframework.format.annotation.DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date createTime;
-    private Integer state;
-    private Clob details;
-    private String pictures;
-    private Clob view;
+    private Integer state1;
+    private String details1;
+    private String pictures1;
+    private String view1;
     private Integer delFlag;
 
     /**
      * java字段名转换为原始数据库列名。<b>如果不存在则返回null</b><br>
      * <p>字段列表：</p>
-     * <li>pkstaff -> pkstaff</li>
+     * <li>pkStaff -> pk_staff</li>
      * <li>titleName -> title_name</li>
      * <li>updateTime -> update_time</li>
      * <li>createTime -> create_time</li>
-     * <li>state -> state</li>
-     * <li>details -> details</li>
-     * <li>pictures -> pictures</li>
-     * <li>view -> view</li>
+     * <li>state1 -> state1</li>
+     * <li>details1 -> details1</li>
+     * <li>pictures1 -> pictures1</li>
+     * <li>view1 -> view1</li>
      * <li>delFlag -> del_flag</li>
      */
     public static String fieldToColumn(String fieldName) {
         if (fieldName == null) return null;
         switch (fieldName) {
-            case "pkstaff": return "pkstaff";
+            case "pkStaff": return "pk_staff";
             case "titleName": return "title_name";
             case "updateTime": return "update_time";
             case "createTime": return "create_time";
-            case "state": return "state";
-            case "details": return "details";
-            case "pictures": return "pictures";
-            case "view": return "view";
+            case "state1": return "state1";
+            case "details1": return "details1";
+            case "pictures1": return "pictures1";
+            case "view1": return "view1";
             case "delFlag": return "del_flag";
             default: return null;
         }
@@ -57,40 +57,40 @@ public class StaffstyleEO extends BaseEntity {
     /**
      * 原始数据库列名转换为java字段名。<b>如果不存在则返回null</b><br>
      * <p>字段列表：</p>
-     * <li>pkstaff -> pkstaff</li>
+     * <li>pk_staff -> pkStaff</li>
      * <li>title_name -> titleName</li>
      * <li>update_time -> updateTime</li>
      * <li>create_time -> createTime</li>
-     * <li>state -> state</li>
-     * <li>details -> details</li>
-     * <li>pictures -> pictures</li>
-     * <li>view -> view</li>
+     * <li>state1 -> state1</li>
+     * <li>details1 -> details1</li>
+     * <li>pictures1 -> pictures1</li>
+     * <li>view1 -> view1</li>
      * <li>del_flag -> delFlag</li>
      */
     public static String columnToField(String columnName) {
         if (columnName == null) return null;
         switch (columnName) {
-            case "pkstaff": return "pkstaff";
+            case "pk_staff": return "pkStaff";
             case "title_name": return "titleName";
             case "update_time": return "updateTime";
             case "create_time": return "createTime";
-            case "state": return "state";
-            case "details": return "details";
-            case "pictures": return "pictures";
-            case "view": return "view";
+            case "state1": return "state1";
+            case "details1": return "details1";
+            case "pictures1": return "pictures1";
+            case "view1": return "view1";
             case "del_flag": return "delFlag";
             default: return null;
         }
     }
     
     /**  **/
-    public String getPkstaff() {
-        return this.pkstaff;
+    public String getPkStaff() {
+        return this.pkStaff;
     }
 
     /**  **/
-    public void setPkstaff(String pkstaff) {
-        this.pkstaff = pkstaff;
+    public void setPkStaff(String pkStaff) {
+        this.pkStaff = pkStaff;
     }
 
     /**  **/
@@ -124,43 +124,37 @@ public class StaffstyleEO extends BaseEntity {
     }
 
     /**  **/
-    public Integer getState() {
-        return this.state;
+    public Integer getState1() {
+        return this.state1;
     }
 
     /**  **/
-    public void setState(Integer state) {
-        this.state = state;
+    public void setState1(Integer state1) {
+        this.state1 = state1;
     }
 
-    /**  **/
-    public Clob getDetails() {
-        return this.details;
+    public void setDetails1(String details1) {
+        this.details1 = details1;
     }
 
-    /**  **/
-    public void setDetails(Clob details) {
-        this.details = details;
+    public String getDetails1() {
+        return details1;
     }
 
-    /**  **/
-    public String getPictures() {
-        return this.pictures;
+    public void setPictures1(String pictures1) {
+        this.pictures1 = pictures1;
     }
 
-    /**  **/
-    public void setPictures(String pictures) {
-        this.pictures = pictures;
+    public String getPictures1() {
+        return pictures1;
     }
 
-    /**  **/
-    public Clob getView() {
-        return this.view;
+    public void setView1(String view1) {
+        this.view1 = view1;
     }
 
-    /**  **/
-    public void setView(Clob view) {
-        this.view = view;
+    public String getView1() {
+        return view1;
     }
 
     /**  **/

@@ -20,7 +20,7 @@ import com.adc.da.util.http.Result;
 import com.adc.da.util.http.PageInfo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.apache.shiro.authz.annotation.RequiresPermissions;
+
 
 @RestController
 @RequestMapping("/${restPath}/sys/announce")
@@ -34,7 +34,6 @@ public class AnnounceEOController extends BaseController<AnnounceEO>{
 
 	@ApiOperation(value = "|AnnounceEO|分页查询")
     @GetMapping("/page")
-    @RequiresPermissions("sys:announce:page")
     public ResponseMessage<PageInfo<AnnounceEO>> page(AnnounceEOPage page) throws Exception {
         List<AnnounceEO> rows = announceEOService.queryByPage(page);
         return Result.success(getPageInfo(page.getPager(), rows));
@@ -42,21 +41,18 @@ public class AnnounceEOController extends BaseController<AnnounceEO>{
 
 	@ApiOperation(value = "|AnnounceEO|查询")
     @GetMapping("")
-    @RequiresPermissions("sys:announce:list")
     public ResponseMessage<List<AnnounceEO>> list(AnnounceEOPage page) throws Exception {
         return Result.success(announceEOService.queryByList(page));
 	}
 
     @ApiOperation(value = "|AnnounceEO|详情")
     @GetMapping("/{pkAnnounce}")
-    @RequiresPermissions("sys:announce:get")
     public ResponseMessage<AnnounceEO> find(@PathVariable String pkAnnounce) throws Exception {
         return Result.success(announceEOService.selectByPrimaryKey(pkAnnounce));
     }
 
     @ApiOperation(value = "|AnnounceEO|新增")
     @PostMapping(consumes = APPLICATION_JSON_UTF8_VALUE)
-    @RequiresPermissions("sys:announce:save")
     public ResponseMessage<AnnounceEO> create(@RequestBody AnnounceEO announceEO) throws Exception {
         announceEOService.insertSelective(announceEO);
         return Result.success(announceEO);
@@ -64,7 +60,6 @@ public class AnnounceEOController extends BaseController<AnnounceEO>{
 
     @ApiOperation(value = "|AnnounceEO|修改")
     @PutMapping(consumes = APPLICATION_JSON_UTF8_VALUE)
-    @RequiresPermissions("sys:announce:update")
     public ResponseMessage<AnnounceEO> update(@RequestBody AnnounceEO announceEO) throws Exception {
         announceEOService.updateByPrimaryKeySelective(announceEO);
         return Result.success(announceEO);
@@ -72,7 +67,6 @@ public class AnnounceEOController extends BaseController<AnnounceEO>{
 
     @ApiOperation(value = "|AnnounceEO|删除")
     @DeleteMapping("/{pkAnnounce}")
-    @RequiresPermissions("sys:announce:delete")
     public ResponseMessage delete(@PathVariable String pkAnnounce) throws Exception {
         announceEOService.deleteByPrimaryKey(pkAnnounce);
         logger.info("delete from TS_ANNOUNCE where pkAnnounce = {}", pkAnnounce);

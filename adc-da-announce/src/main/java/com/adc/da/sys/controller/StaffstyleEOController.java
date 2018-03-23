@@ -20,7 +20,6 @@ import com.adc.da.util.http.Result;
 import com.adc.da.util.http.PageInfo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.apache.shiro.authz.annotation.RequiresPermissions;
 
 @RestController
 @RequestMapping("/${restPath}/sys/staffstyle")
@@ -34,7 +33,6 @@ public class StaffstyleEOController extends BaseController<StaffstyleEO>{
 
 	@ApiOperation(value = "|StaffstyleEO|分页查询")
     @GetMapping("/page")
-    @RequiresPermissions("sys:staffstyle:page")
     public ResponseMessage<PageInfo<StaffstyleEO>> page(StaffstyleEOPage page) throws Exception {
         List<StaffstyleEO> rows = staffstyleEOService.queryByPage(page);
         return Result.success(getPageInfo(page.getPager(), rows));
@@ -42,21 +40,18 @@ public class StaffstyleEOController extends BaseController<StaffstyleEO>{
 
 	@ApiOperation(value = "|StaffstyleEO|查询")
     @GetMapping("")
-    @RequiresPermissions("sys:staffstyle:list")
     public ResponseMessage<List<StaffstyleEO>> list(StaffstyleEOPage page) throws Exception {
         return Result.success(staffstyleEOService.queryByList(page));
 	}
 
     @ApiOperation(value = "|StaffstyleEO|详情")
     @GetMapping("/{pkstaff}")
-    @RequiresPermissions("sys:staffstyle:get")
     public ResponseMessage<StaffstyleEO> find(@PathVariable String pkstaff) throws Exception {
         return Result.success(staffstyleEOService.selectByPrimaryKey(pkstaff));
     }
 
     @ApiOperation(value = "|StaffstyleEO|新增")
     @PostMapping(consumes = APPLICATION_JSON_UTF8_VALUE)
-    @RequiresPermissions("sys:staffstyle:save")
     public ResponseMessage<StaffstyleEO> create(@RequestBody StaffstyleEO staffstyleEO) throws Exception {
         staffstyleEOService.insertSelective(staffstyleEO);
         return Result.success(staffstyleEO);
@@ -64,7 +59,6 @@ public class StaffstyleEOController extends BaseController<StaffstyleEO>{
 
     @ApiOperation(value = "|StaffstyleEO|修改")
     @PutMapping(consumes = APPLICATION_JSON_UTF8_VALUE)
-    @RequiresPermissions("sys:staffstyle:update")
     public ResponseMessage<StaffstyleEO> update(@RequestBody StaffstyleEO staffstyleEO) throws Exception {
         staffstyleEOService.updateByPrimaryKeySelective(staffstyleEO);
         return Result.success(staffstyleEO);
@@ -72,7 +66,6 @@ public class StaffstyleEOController extends BaseController<StaffstyleEO>{
 
     @ApiOperation(value = "|StaffstyleEO|删除")
     @DeleteMapping("/{pkstaff}")
-    @RequiresPermissions("sys:staffstyle:delete")
     public ResponseMessage delete(@PathVariable String pkstaff) throws Exception {
         staffstyleEOService.deleteByPrimaryKey(pkstaff);
         logger.info("delete from TS_STAFFSTYLE where pkstaff = {}", pkstaff);

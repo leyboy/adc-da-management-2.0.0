@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.adc.da.sys.dao.WebsiteconfigurationEODao" >
+  <!-- Result Map-->
+  <resultMap id="BaseResultMap" type="com.adc.da.sys.entity.WebsiteconfigurationEO" >
+    <id column="pk_websiteconfiguration" property="pkWebsiteconfiguration" />
+    <result column="configurationtype" property="configurationtype" />
+    <result column="title" property="title" />
+    <result column="imageurl" property="imageurl" />
+    <result column="content" property="content" />
+    <result column="processsequencenumber" property="processsequencenumber" />
+    <result column="explicitstate" property="explicitstate" />
+    <result column="limitquantity" property="limitquantity" />
+    <result column="effective" property="effective" />
+    <result column="createtime" property="createtime" />
+    <result column="updatetime" property="updatetime" />
+    <result column="deleteflag" property="deleteflag" />
+  </resultMap>
+
+  <!-- TS_WEBSITECONFIGURATION table all fields -->
+  <sql id="Base_Column_List" >
+     pk_websiteconfiguration, configurationtype, title, imageurl, content, processsequencenumber, explicitstate, limitquantity, effective, createtime, updatetime, deleteflag
+  </sql>
+
+  <!-- 查询条件 -->
+  <sql id="Base_Where_Clause">
+    where 1=1
+    <trim suffixOverrides="," >
+      <if test="pkWebsiteconfiguration != null" >
+        and pk_websiteconfiguration ${pkWebsiteconfigurationOperator} #{pkWebsiteconfiguration}
+      </if>
+      <if test="configurationtype != null" >
+        and configurationtype ${configurationtypeOperator} #{configurationtype}
+      </if>
+      <if test="title != null" >
+        and title ${titleOperator} #{title}
+      </if>
+      <if test="imageurl != null" >
+        and imageurl ${imageurlOperator} #{imageurl}
+      </if>
+      <if test="content != null" >
+        and content ${contentOperator} #{content}
+      </if>
+      <if test="processsequencenumber != null" >
+        and processsequencenumber ${processsequencenumberOperator} #{processsequencenumber}
+      </if>
+      <if test="explicitstate != null" >
+        and explicitstate ${explicitstateOperator} #{explicitstate}
+      </if>
+      <if test="limitquantity != null" >
+        and limitquantity ${limitquantityOperator} #{limitquantity}
+      </if>
+      <if test="effective != null" >
+        and effective ${effectiveOperator} #{effective}
+      </if>
+      <if test="createtime != null" >
+        and createtime ${createtimeOperator} #{createtime}
+      </if>
+      <if test="createtime1 != null" >
+        and createtime &gt;= #{createtime1}
+      </if>
+      <if test="createtime2 != null" >
+        and createtime &lt;= #{createtime2}
+      </if>
+      <if test="updatetime != null" >
+        and updatetime ${updatetimeOperator} #{updatetime}
+      </if>
+      <if test="updatetime1 != null" >
+        and updatetime &gt;= #{updatetime1}
+      </if>
+      <if test="updatetime2 != null" >
+        and updatetime &lt;= #{updatetime2}
+      </if>
+      <if test="deleteflag != null" >
+        and deleteflag ${deleteflagOperator} #{deleteflag}
+      </if>
+    </trim>
+  </sql>
+
+  <!-- 插入记录 -->
+  <insert id="insert" parameterType="com.adc.da.sys.entity.WebsiteconfigurationEO" >
+    <!-- <selectKey resultType="java.lang.String" order="BEFORE" keyProperty="pk_websiteconfiguration">
+        SELECT SEQ_TS_WEBSITECONFIGURATION.NEXTVAL FROM DUAL
+    </selectKey> -->
+    insert into TS_WEBSITECONFIGURATION(<include refid="Base_Column_List" />)
+    values (#{pkWebsiteconfiguration, jdbcType=VARCHAR}, #{configurationtype, jdbcType=INTEGER}, #{title, jdbcType=VARCHAR}, #{imageurl, jdbcType=VARCHAR}, #{content, jdbcType=VARCHAR}, #{processsequencenumber, jdbcType=VARCHAR}, #{explicitstate, jdbcType=VARCHAR}, #{limitquantity, jdbcType=VARCHAR}, #{effective, jdbcType=VARCHAR}, #{createtime, jdbcType=TIMESTAMP}, #{updatetime, jdbcType=TIMESTAMP}, #{deleteflag, jdbcType=INTEGER})
+  </insert>
+
+  <!-- 动态插入记录 主键是序列 -->
+  <insert id="insertSelective" parameterType="com.adc.da.sys.entity.WebsiteconfigurationEO" >
+        <!-- <selectKey resultType="java.lang.String" order="BEFORE" keyProperty="pk_websiteconfiguration">
+        SELECT SEQ_TS_WEBSITECONFIGURATION.NEXTVAL FROM DUAL
+    </selectKey> -->
+        insert into TS_WEBSITECONFIGURATION
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+                <if test="pkWebsiteconfiguration != null" >pk_websiteconfiguration,</if>
+                <if test="configurationtype != null" >configurationtype,</if>
+                <if test="title != null" >title,</if>
+                <if test="imageurl != null" >imageurl,</if>
+                <if test="content != null" >content,</if>
+                <if test="processsequencenumber != null" >processsequencenumber,</if>
+                <if test="explicitstate != null" >explicitstate,</if>
+                <if test="limitquantity != null" >limitquantity,</if>
+                <if test="effective != null" >effective,</if>
+                <if test="createtime != null" >createtime,</if>
+                <if test="updatetime != null" >updatetime,</if>
+                <if test="deleteflag != null" >deleteflag,</if>
+            </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+                <if test="pkWebsiteconfiguration != null" >#{pkWebsiteconfiguration, jdbcType=VARCHAR},</if>
+                <if test="configurationtype != null" >#{configurationtype, jdbcType=INTEGER},</if>
+                <if test="title != null" >#{title, jdbcType=VARCHAR},</if>
+                <if test="imageurl != null" >#{imageurl, jdbcType=VARCHAR},</if>
+                <if test="content != null" >#{content, jdbcType=VARCHAR},</if>
+                <if test="processsequencenumber != null" >#{processsequencenumber, jdbcType=VARCHAR},</if>
+                <if test="explicitstate != null" >#{explicitstate, jdbcType=VARCHAR},</if>
+                <if test="limitquantity != null" >#{limitquantity, jdbcType=VARCHAR},</if>
+                <if test="effective != null" >#{effective, jdbcType=VARCHAR},</if>
+                <if test="createtime != null" >#{createtime, jdbcType=TIMESTAMP},</if>
+                <if test="updatetime != null" >#{updatetime, jdbcType=TIMESTAMP},</if>
+                <if test="deleteflag != null" >#{deleteflag, jdbcType=INTEGER},</if>
+            </trim>
+  </insert>
+
+  <!-- 根据pk，修改记录-->
+  <update id="updateByPrimaryKey" parameterType="com.adc.da.sys.entity.WebsiteconfigurationEO" >
+    update TS_WEBSITECONFIGURATION
+       set  configurationtype = #{configurationtype},
+            title = #{title},
+            imageurl = #{imageurl},
+            content = #{content},
+            processsequencenumber = #{processsequencenumber},
+            explicitstate = #{explicitstate},
+            limitquantity = #{limitquantity},
+            effective = #{effective},
+            createtime = #{createtime},
+            updatetime = #{updatetime},
+            deleteflag = #{deleteflag}
+     where  pk_websiteconfiguration = #{pkWebsiteconfiguration}
+  </update>
+
+  <!-- 修改记录，只修改只不为空的字段 -->
+  <update id="updateByPrimaryKeySelective" parameterType="com.adc.da.sys.entity.WebsiteconfigurationEO" >
+    update TS_WEBSITECONFIGURATION
+    <set >
+      <if test="configurationtype != null" >
+        configurationtype = #{configurationtype},
+      </if>
+      <if test="title != null" >
+        title = #{title},
+      </if>
+      <if test="imageurl != null" >
+        imageurl = #{imageurl},
+      </if>
+      <if test="content != null" >
+        content = #{content},
+      </if>
+      <if test="processsequencenumber != null" >
+        processsequencenumber = #{processsequencenumber},
+      </if>
+      <if test="explicitstate != null" >
+        explicitstate = #{explicitstate},
+      </if>
+      <if test="limitquantity != null" >
+        limitquantity = #{limitquantity},
+      </if>
+      <if test="effective != null" >
+        effective = #{effective},
+      </if>
+      <if test="createtime != null" >
+        createtime = #{createtime},
+      </if>
+      <if test="updatetime != null" >
+        updatetime = #{updatetime},
+      </if>
+      <if test="deleteflag != null" >
+        deleteflag = #{deleteflag},
+      </if>
+    </set>
+     where pk_websiteconfiguration = #{pkWebsiteconfiguration}
+  </update>
+
+  <!-- 根据id查询 TS_WEBSITECONFIGURATION -->
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String">
+    select <include refid="Base_Column_List" /> 
+      from TS_WEBSITECONFIGURATION
+     where pk_websiteconfiguration = #{value}
+
+  </select>
+
+  <!-- 删除记录 -->
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from TS_WEBSITECONFIGURATION
+     where pk_websiteconfiguration = #{value}
+
+  </delete>
+
+  <!-- TS_WEBSITECONFIGURATION 列表总数-->
+  <select id="queryByCount" resultType="java.lang.Integer" parameterType="com.adc.da.base.page.BasePage">
+    select count(1) from TS_WEBSITECONFIGURATION
+    <include refid="Base_Where_Clause"/>
+  </select>
+
+  <!-- 查询TS_WEBSITECONFIGURATION列表 -->
+  <select id="queryByPage" resultMap="BaseResultMap" parameterType="com.adc.da.base.page.BasePage">
+	select <include refid="Base_Column_List" /> from
+		(select tmp_tb.* , rownum rn from
+			(select <include refid="Base_Column_List" /> from TS_WEBSITECONFIGURATION
+			 <include refid="Base_Where_Clause"/>
+			 <if test="pager.orderCondition != null and pager.orderCondition != ''" >
+			 	${pager.orderCondition}
+			 </if>
+			) tmp_tb where rownum &lt;= ${pager.endIndex})
+			where rn &gt;= ${pager.startIndex}
+  </select>
+
+  <select id="queryByList" resultMap="BaseResultMap" parameterType="com.adc.da.base.page.BasePage">
+    select <include refid="Base_Column_List"/> from TS_WEBSITECONFIGURATION
+    <include refid="Base_Where_Clause"/>
+    <if test="pager.orderCondition != null and pager.orderCondition != ''" >
+       ${pager.orderCondition}
+    </if>
+  </select>
+
+</mapper>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.adc.da.sys.dao.AnnounceEODao">
+	<!-- Result Map -->
+	<resultMap id="BaseResultMap" type="com.adc.da.sys.entity.AnnounceEO">
+		<result column="ANNOUNCEID" property="pkannounce" jdbcType="VARCHAR"/>
+		<result column="DeleteFlag" property="deleteflag" javaType="boolean" jdbcType="INTEGER"/>
+		<result column="Updatetime1" property="updatetime" />
+		<result column="Createtime1" property="createtime" />
+		<result column="AnnounceCreator1" property="announcecreator" />
+		<result column="State1" property="state" javaType="INTEGER" jdbcType="DECIMAL"/>
+		<result column="ExpriyTime1" property="expriytime" />
+		<result column="CONTENT1" property="content" />
+		<result column="TITLE1" property="title" />
+	</resultMap>
+
+	<!-- TS_ANNOUNCE table all fields -->
+	<sql id="Base_Column_List">
+		DeleteFlag1, Updatetime1, Createtime1, AnnounceCreator1, State1, ExpriyTime1, CONTENT1,
+		TITLE1, ANNOUNCEID
+	</sql>
+
+	<!-- 查询条件 -->
+	<sql id="Base_Where_Clause">
+		where 1=1
+		<trim suffixOverrides=",">
+			<if test="deleteflag != null">
+				and DeleteFlag1 ${deleteflagOperator} #{deleteflag}
+			</if>
+			<if test="updatetime != null">
+				and Updatetime1 ${updatetimeOperator} #{updatetime}
+			</if>
+			<if test="updatetime1 != null">
+				and Updatetime1 &gt;= #{updatetime1}
+			</if>
+			<if test="updatetime2 != null">
+				and Updatetime1 &lt;= #{updatetime2}
+			</if>
+			<if test="createtime != null">
+				and Createtime1 ${createtimeOperator} #{createtime}
+			</if>
+			<if test="createtime1 != null">
+				and Createtime1 &gt;= #{createtime1}
+			</if>
+			<if test="createtime2 != null">
+				and Createtime1 &lt;= #{createtime2}
+			</if>
+			<if test="announcecreator != null">
+				and AnnounceCreator1 ${announcecreatorOperator} #{announcecreator}
+			</if>
+			<if test="state != null">
+				and State1 ${stateOperator} #{state}
+			</if>
+			<if test="expriytime != null">
+				and ExpriyTime1 ${expriytimeOperator} #{expriytime}
+			</if>
+			<if test="expriytime1 != null">
+				and ExpriyTime1 &gt;= #{expriytime1}
+			</if>
+			<if test="expriytime2 != null">
+				and ExpriyTime1 &lt;= #{expriytime2}
+			</if>
+			<if test="content != null">
+				and CONTENT1 ${contentOperator} #{content}
+			</if>
+			<if test="title != null">
+				and TITLE1 ${titleOperator} #{title}
+			</if>
+			<if test="pkannounce != null">
+				and ANNOUNCEID ${pkannounceOperator} #{pkannounce}
+			</if>
+		</trim>
+	</sql>
+
+	<!-- 插入记录 -->
+	<insert id="insert" parameterType="com.adc.da.sys.entity.AnnounceEO">
+		insert into TS_ANNOUNCE(
+		<include refid="Base_Column_List" />
+		)
+		values (#{deleteflag, jdbcType=INTEGER}, #{updatetime, jdbcType=TIMESTAMP},
+		#{createtime, jdbcType=TIMESTAMP}, #{announcecreator,
+		jdbcType=VARCHAR}, #{state, jdbcType=INTEGER}, #{expriytime,
+		jdbcType=TIMESTAMP}, #{content, jdbcType=VARCHAR}, #{title,
+		jdbcType=VARCHAR}, #{pkannounce, jdbcType=VARCHAR})
+	</insert>
+
+	<!-- 动态插入记录 主键是序列 -->
+	<insert id="insertSelective" parameterType="com.adc.da.sys.entity.AnnounceEO">
+		insert into TS_ANNOUNCE
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="deleteflag != null">DeleteFlag1,</if>
+			<if test="updatetime != null">Updatetime1,</if>
+			<if test="createtime != null">Createtime1,</if>
+			<if test="announcecreator != null">AnnounceCreator1,</if>
+			<if test="state != null">State1,</if>
+			<if test="expriytime != null">ExpriyTime1,</if>
+			<if test="content != null">CONTENT1,</if>
+			<if test="title != null">TITLE1,</if>
+			<if test="pkannounce != null">ANNOUNCEID,</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="deleteflag != null">#{deleteflag, jdbcType=INTEGER},
+			</if>
+			<if test="updatetime != null">#{updatetime, jdbcType=TIMESTAMP},
+			</if>
+			<if test="createtime != null">#{createtime, jdbcType=TIMESTAMP},
+			</if>
+			<if test="announcecreator != null">#{announcecreator,
+				jdbcType=VARCHAR},</if>
+			<if test="state != null">#{state, jdbcType=INTEGER},</if>
+			<if test="expriytime != null">#{expriytime, jdbcType=TIMESTAMP},
+			</if>
+			<if test="content != null">#{content, jdbcType=VARCHAR},</if>
+			<if test="title != null">#{title, jdbcType=VARCHAR},</if>
+			<if test="pkannounce != null">#{pkannounce, jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+
+	<!-- TS_ANNOUNCE 列表总数 -->
+	<select id="queryByCount" resultType="java.lang.Integer"
+		parameterType="com.adc.da.base.page.BasePage">
+		select count(1) from TS_ANNOUNCE
+		<include refid="Base_Where_Clause" />
+	</select>
+
+	<!-- 查询TS_ANNOUNCE列表 -->
+	<select id="queryByPage" resultMap="BaseResultMap"
+		parameterType="com.adc.da.base.page.BasePage">
+		select
+		<include refid="Base_Column_List" />
+		from
+		(select tmp_tb.* , rownum rn from
+		(select
+		<include refid="Base_Column_List" />
+		from TS_ANNOUNCE
+		<include refid="Base_Where_Clause" />
+		<if test="pager.orderCondition != null and pager.orderCondition != ''">
+			${pager.orderCondition}
+		</if>
+		) tmp_tb where rownum &lt;= ${pager.endIndex})
+		where rn &gt;= ${pager.startIndex}
+	</select>
+
+	<select id="queryByList" resultMap="BaseResultMap"
+		parameterType="com.adc.da.base.page.BasePage">
+		select
+		<include refid="Base_Column_List" />
+		from TS_ANNOUNCE
+		<include refid="Base_Where_Clause" />
+		<if test="pager.orderCondition != null and pager.orderCondition != ''">
+			${pager.orderCondition}
+		</if>
+	</select>
+
+</mapper>

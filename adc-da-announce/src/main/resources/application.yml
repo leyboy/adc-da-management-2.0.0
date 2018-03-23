@@ -1,0 +1,17 @@
+server:
+  port: 9095
+
+#dataSource可以使用druid
+spring:
+    datasource:
+        name: dataSource
+        url: jdbc:oracle:thin:@localhost:1521:XE
+        username: ley
+        password: orcl
+        driver-class-name: oracle.jdbc.driver.OracleDriver
+
+
+
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/sys/*.xml
+  config-location: classpath:mybatis-config.xml

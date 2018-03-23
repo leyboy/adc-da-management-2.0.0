@@ -4,232 +4,173 @@ import com.adc.da.base.entity.BaseEntity;
 
 import java.util.Date;
 
-import javax.validation.constraints.NotNull;
-
 /**
- * <b>功能:</b>TS_ANNOUCNE(公告通知表) entity class
- * 
- * @author LiuEnYuan
- * @author SunYiChuan
- * @version 2.0.0
- **/
+ * <b>功能：</b>TS_ANNOUNCE AnnounceEOEntity<br>
+ * <b>作者：</b>code generator<br>
+ * <b>日期：</b> 2018-03-23 <br>
+ * <b>版权所有：<b>版权归北京卡达克数据技术中心所有。<br>
+ */
 public class AnnounceEO extends BaseEntity {
 
-	// 通告记录是否删除标志
-	private Integer deleteflag;
+    private String pkAnnounce;
+    private String title;
+    private String content;
+    @org.springframework.format.annotation.DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    private Date expriyTime;
+    private Integer state;
+    private String announCecreator;
+    @org.springframework.format.annotation.DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    private Date createTime;
+    @org.springframework.format.annotation.DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    private Date updateTime1;
+    private Integer deleteFlag;
 
-	// 通告记录更新时间
-	@org.springframework.format.annotation.DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-	private Date updatetime;
+    /**
+     * java字段名转换为原始数据库列名。<b>如果不存在则返回null</b><br>
+     * <p>字段列表：</p>
+     * <li>pkAnnounce -> pk_announce</li>
+     * <li>title -> title</li>
+     * <li>content -> content</li>
+     * <li>expriyTime -> expriy_time</li>
+     * <li>state -> state</li>
+     * <li>announCecreator -> announ_cecreator</li>
+     * <li>createTime -> create_time</li>
+     * <li>updateTime1 -> update_time1</li>
+     * <li>deleteFlag -> delete_flag</li>
+     */
+    public static String fieldToColumn(String fieldName) {
+        if (fieldName == null) return null;
+        switch (fieldName) {
+            case "pkAnnounce": return "pk_announce";
+            case "title": return "title";
+            case "content": return "content";
+            case "expriyTime": return "expriy_time";
+            case "state": return "state";
+            case "announCecreator": return "announ_cecreator";
+            case "createTime": return "create_time";
+            case "updateTime1": return "update_time1";
+            case "deleteFlag": return "delete_flag";
+            default: return null;
+        }
+    }
 
-	@org.springframework.format.annotation.DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-	@NotNull(message = "创建时间不能为空")
-	private Date createtime;
+    /**
+     * 原始数据库列名转换为java字段名。<b>如果不存在则返回null</b><br>
+     * <p>字段列表：</p>
+     * <li>pk_announce -> pkAnnounce</li>
+     * <li>title -> title</li>
+     * <li>content -> content</li>
+     * <li>expriy_time -> expriyTime</li>
+     * <li>state -> state</li>
+     * <li>announ_cecreator -> announCecreator</li>
+     * <li>create_time -> createTime</li>
+     * <li>update_time1 -> updateTime1</li>
+     * <li>delete_flag -> deleteFlag</li>
+     */
+    public static String columnToField(String columnName) {
+        if (columnName == null) return null;
+        switch (columnName) {
+            case "pk_announce": return "pkAnnounce";
+            case "title": return "title";
+            case "content": return "content";
+            case "expriy_time": return "expriyTime";
+            case "state": return "state";
+            case "announ_cecreator": return "announCecreator";
+            case "create_time": return "createTime";
+            case "update_time1": return "updateTime1";
+            case "delete_flag": return "deleteFlag";
+            default: return null;
+        }
+    }
+    
+    /**  **/
+    public String getPkAnnounce() {
+        return this.pkAnnounce;
+    }
 
-	@NotNull(message = "通告创建者不能为空")
-	private String announcecreator;
+    /**  **/
+    public void setPkAnnounce(String pkAnnounce) {
+        this.pkAnnounce = pkAnnounce;
+    }
 
-	@NotNull(message = "发布状态不能为空")
-	private Integer state;
+    /**  **/
+    public String getTitle() {
+        return this.title;
+    }
 
-	@NotNull(message = "到期时间不能为空")
-	@org.springframework.format.annotation.DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
-	private Date expriytime;
+    /**  **/
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-	@NotNull(message = "通告内容不能为空")
-	private String content;
+    /**  **/
+    public String getContent() {
+        return this.content;
+    }
 
-	@NotNull(message = "通告标题不能为空")
-	private String title;
+    /**  **/
+    public void setContent(String content) {
+        this.content = content;
+    }
 
-	@NotNull(message = "通告主键不能为空")
-	private String pkannounce;
+    /**  **/
+    public Date getExpriyTime() {
+        return this.expriyTime;
+    }
 
-	public AnnounceEO() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+    /**  **/
+    public void setExpriyTime(Date expriyTime) {
+        this.expriyTime = expriyTime;
+    }
 
-	/**
-	 * java字段名转换为原始数据库列名。<b>如果不存在则返回null</b><br>
-	 * <p>
-	 * 字段列表：
-	 * </p>
-	 * <li>deleteflag -> deleteflag</li>
-	 * <li>updatetime -> updatetime</li>
-	 * <li>createtime -> createtime</li>
-	 * <li>announcecreator -> announcecreator</li>
-	 * <li>state -> state</li>
-	 * <li>expriytime -> expriytime</li>
-	 * <li>content -> content</li>
-	 * <li>title -> title</li>
-	 * <li>pkannounce -> pkannounce</li>
-	 */
-	public static String fieldToColumn(String fieldName) {
-		if (fieldName == null)
-			return null;
-		switch (fieldName) {
-		case "deleteflag":
-			return "deleteflag";
-		case "updatetime":
-			return "updatetime";
-		case "createtime":
-			return "createtime";
-		case "announcecreator":
-			return "announcecreator";
-		case "state":
-			return "state";
-		case "expriytime":
-			return "expriytime";
-		case "content":
-			return "content";
-		case "title":
-			return "title";
-		case "pkannounce":
-			return "pkannounce";
-		default:
-			return null;
-		}
-	}
+    /**  **/
+    public Integer getState() {
+        return this.state;
+    }
 
-	/**
-	 * 原始数据库列名转换为java字段名。<b>如果不存在则返回null</b><br>
-	 * <p>
-	 * 字段列表：
-	 * </p>
-	 * <li>deleteflag -> deleteflag</li>
-	 * <li>updatetime -> updatetime</li>
-	 * <li>createtime -> createtime</li>
-	 * <li>announcecreator -> announcecreator</li>
-	 * <li>state -> state</li>
-	 * <li>expriytime -> expriytime</li>
-	 * <li>content -> content</li>
-	 * <li>title -> title</li>
-	 * <li>pkannounce -> pkannounce</li>
-	 */
-	public static String columnToField(String columnName) {
-		if (columnName == null)
-			return null;
-		switch (columnName) {
-		case "deleteflag":
-			return "deleteflag";
-		case "updatetime":
-			return "updatetime";
-		case "createtime":
-			return "createtime";
-		case "announcecreator":
-			return "announcecreator";
-		case "state":
-			return "state";
-		case "expriytime":
-			return "expriytime";
-		case "content":
-			return "content";
-		case "title":
-			return "title";
-		case "pkannounce":
-			return "pkannounce";
-		default:
-			return null;
-		}
-	}
+    /**  **/
+    public void setState(Integer state) {
+        this.state = state;
+    }
 
-	/**  **/
-	public Integer getDeleteflag() {
-		return this.deleteflag;
-	}
+    /**  **/
+    public String getAnnounCecreator() {
+        return this.announCecreator;
+    }
 
-	/**  **/
-	public void setDeleteflag(Integer deleteflag) {
-		this.deleteflag = deleteflag;
-	}
+    /**  **/
+    public void setAnnounCecreator(String announCecreator) {
+        this.announCecreator = announCecreator;
+    }
 
-	/**  **/
-	public Date getUpdatetime() {
-		return this.updatetime;
-	}
+    /**  **/
+    public Date getCreateTime() {
+        return this.createTime;
+    }
 
-	/**  **/
-	public void setUpdatetime(Date updatetime) {
-		this.updatetime = updatetime;
-	}
+    /**  **/
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
 
-	/**  **/
-	public Date getCreatetime() {
-		return this.createtime;
-	}
+    /**  **/
+    public Date getUpdateTime1() {
+        return this.updateTime1;
+    }
 
-	/**  **/
-	public void setCreatetime(Date createtime) {
-		this.createtime = createtime;
-	}
+    /**  **/
+    public void setUpdateTime1(Date updateTime1) {
+        this.updateTime1 = updateTime1;
+    }
 
-	/**  **/
-	public String getAnnouncecreator() {
-		return this.announcecreator;
-	}
+    /**  **/
+    public Integer getDeleteFlag() {
+        return this.deleteFlag;
+    }
 
-	/**  **/
-	public void setAnnouncecreator(String announcecreator) {
-		this.announcecreator = announcecreator;
-	}
-
-	/**  **/
-	public Integer getState() {
-		return this.state;
-	}
-
-	/**  **/
-	public void setState(Integer state) {
-		this.state = state;
-	}
-
-	/**  **/
-	public Date getExpriytime() {
-		return this.expriytime;
-	}
-
-	/**  **/
-	public void setExpriytime(Date expriytime) {
-		this.expriytime = expriytime;
-	}
-
-	/**  **/
-	public String getContent() {
-		return this.content;
-	}
-
-	/**  **/
-	public void setContent(String content) {
-		this.content = content;
-	}
-
-	/**  **/
-	public String getTitle() {
-		return this.title;
-	}
-
-	/**  **/
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	/**  **/
-	public String getPkannounce() {
-		return this.pkannounce;
-	}
-
-	/**  **/
-	public void setPkannounce(String pkannounce) {
-		this.pkannounce = pkannounce;
-	}
-
-	@Override
-	public String toString() {
-		super.toString();
-		return "AnnounceEO [deleteflag=" + deleteflag + ", updatetime=" + updatetime + ", createtime=" + createtime
-				+ ", announcecreator=" + announcecreator + ", state=" + state + ", expriytime=" + expriytime
-				+ ", content=" + content + ", title=" + title + ", pkannounce=" + pkannounce + "]";
-	}
+    /**  **/
+    public void setDeleteFlag(Integer deleteFlag) {
+        this.deleteFlag = deleteFlag;
+    }
 
 }

@@ -3,14 +3,11 @@ package com.adc.da.sys.controller;
 import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE;
 
 import java.util.List;
-
-import javax.validation.Valid;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import com.adc.da.base.web.BaseController;
@@ -23,78 +20,63 @@ import com.adc.da.util.http.Result;
 import com.adc.da.util.http.PageInfo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 
 @RestController
-@RequestMapping("/sys/TS_ANNOUNCE")
+@RequestMapping("/${restPath}/sys/announce")
 @Api(description = "|AnnounceEO|")
-public class AnnounceEOController extends BaseController<AnnounceEO> {
+public class AnnounceEOController extends BaseController<AnnounceEO>{
 
-	@SuppressWarnings("unused")
-	private static final Logger logger = LoggerFactory.getLogger(AnnounceEOController.class);
+    private static final Logger logger = LoggerFactory.getLogger(AnnounceEOController.class);
 
-	@Autowired
-	private AnnounceEOService announceEOService;
+    @Autowired
+    private AnnounceEOService announceEOService;
 
-	/**
-	 * 根据url分页查询
-	 * **/
-	@ApiOperation(value = "|AnnounceEO|分页查询", notes = "根据url分页插叙")
-	@GetMapping(value="/ANNOUNCEByUrlPage")
-	public ResponseMessage<PageInfo<AnnounceEO>> page(AnnounceEOPage page) throws Exception {
-		List<AnnounceEO> rows = announceEOService.queryByPage(page);
-		return Result.success(getPageInfo(page.getPager(), rows));
-	}
+	@ApiOperation(value = "|AnnounceEO|分页查询")
+    @GetMapping("/page")
+    @RequiresPermissions("sys:announce:page")
+    public ResponseMessage<PageInfo<AnnounceEO>> page(AnnounceEOPage page) throws Exception {
+        List<AnnounceEO> rows = announceEOService.queryByPage(page);
+        return Result.success(getPageInfo(page.getPager(), rows));
+    }
 
-	/**
-	 * 分页查询通告
-	 * **/
 	@ApiOperation(value = "|AnnounceEO|查询")
-	@GetMapping(value = "/ANNOUNCEByPage")
-	public ResponseMessage<List<AnnounceEO>> list(AnnounceEOPage page) throws Exception {
-		return Result.success(announceEOService.queryByList(page));
+    @GetMapping("")
+    @RequiresPermissions("sys:announce:list")
+    public ResponseMessage<List<AnnounceEO>> list(AnnounceEOPage page) throws Exception {
+        return Result.success(announceEOService.queryByList(page));
 	}
 
-	/**
-	 * 添加通告
-	 * **/
-	@ApiOperation(value = "|AnnounceEO|新增")
-	@PostMapping(consumes = APPLICATION_JSON_UTF8_VALUE, value = "/ANNOUNCESave")
-	public ResponseMessage<AnnounceEO> create(@Valid @RequestBody AnnounceEO announceEO, BindingResult errors)
-			throws Exception {
-		announceEOService.insertSelective(announceEO);
-		return Result.success(announceEO);
-	}
+    @ApiOperation(value = "|AnnounceEO|详情")
+    @GetMapping("/{pkAnnounce}")
+    @RequiresPermissions("sys:announce:get")
+    public ResponseMessage<AnnounceEO> find(@PathVariable String pkAnnounce) throws Exception {
+        return Result.success(announceEOService.selectByPrimaryKey(pkAnnounce));
+    }
 
-	/**
-	 * 修改通告
-	 * **/
-	@ApiOperation(value = "|AnnounceEO|修改")
-	@PutMapping(consumes = APPLICATION_JSON_UTF8_VALUE, value = "/ANNOUNCEModify")
-	public ResponseMessage<AnnounceEO> modify(@Validated @RequestBody AnnounceEO announceEO, BindingResult errors)
-			throws Exception {
-		announceEOService.updateByPrimaryKey(announceEO);
-		return Result.success("200", announceEO);
-	}
+    @ApiOperation(value = "|AnnounceEO|新增")
+    @PostMapping(consumes = APPLICATION_JSON_UTF8_VALUE)
+    @RequiresPermissions("sys:announce:save")
+    public ResponseMessage<AnnounceEO> create(@RequestBody AnnounceEO announceEO) throws Exception {
+        announceEOService.insertSelective(announceEO);
+        return Result.success(announceEO);
+    }
 
-	/**
-	 * 发布通告,只需要将{@link AnnounceEO#setState(Integer)}=1
-	 * **/
-	@ApiOperation(value = "|AnnounceEO|修改")
-	@PutMapping(consumes = APPLICATION_JSON_UTF8_VALUE, value = "/ANNOUNCERelease")
-	public ResponseMessage<AnnounceEO> release(@Validated @RequestBody AnnounceEO announceEO, BindingResult errors)
-			throws Exception {
-		announceEOService.updateByPrimaryKeySelective(announceEO);
-		return Result.success("200",announceEO);
-	}
-	
-	/**
-	 * 删除通告,只需要将{@link AnnounceEO#setDeleteflag(Integer)}=1
-	 * **/
-	@ApiOperation(value = "|AnnounceEO|删除")
-	@DeleteMapping(consumes = APPLICATION_JSON_UTF8_VALUE, value = "/ANNOUNCEDelete")
-	public ResponseMessage<AnnounceEO> delete(@Validated @RequestBody AnnounceEO announceEO, BindingResult errors)
-			throws Exception {
-		announceEOService.updateByPrimaryKey(announceEO);
-		return Result.success("200",announceEO);
-	}
+    @ApiOperation(value = "|AnnounceEO|修改")
+    @PutMapping(consumes = APPLICATION_JSON_UTF8_VALUE)
+    @RequiresPermissions("sys:announce:update")
+    public ResponseMessage<AnnounceEO> update(@RequestBody AnnounceEO announceEO) throws Exception {
+        announceEOService.updateByPrimaryKeySelective(announceEO);
+        return Result.success(announceEO);
+    }
+
+    @ApiOperation(value = "|AnnounceEO|删除")
+    @DeleteMapping("/{pkAnnounce}")
+    @RequiresPermissions("sys:announce:delete")
+    public ResponseMessage delete(@PathVariable String pkAnnounce) throws Exception {
+        announceEOService.deleteByPrimaryKey(pkAnnounce);
+        logger.info("delete from TS_ANNOUNCE where pkAnnounce = {}", pkAnnounce);
+        return Result.success();
+    }
+
 }

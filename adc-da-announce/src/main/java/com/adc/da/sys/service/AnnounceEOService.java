@@ -17,15 +17,14 @@ import com.adc.da.sys.entity.AnnounceEO;
  * <br>
  * <b>功能：</b>TS_ANNOUNCE AnnounceEOService<br>
  * <b>作者：</b>code generator<br>
- * <b>日期：</b> 2018-03-22 <br>
+ * <b>日期：</b> 2018-03-23 <br>
  * <b>版权所有：<b>版权归北京卡达克数据技术中心所有。<br>
  */
 @Service("announceEOService")
 @Transactional(value = "transactionManager", readOnly = false, propagation = Propagation.REQUIRED, rollbackFor = Throwable.class)
-public class AnnounceEOService extends BaseService<AnnounceEO, Void> {
+public class AnnounceEOService extends BaseService<AnnounceEO, String> {
 
-    @SuppressWarnings("unused")
-	private static final Logger logger = LoggerFactory.getLogger(AnnounceEOService.class);
+    private static final Logger logger = LoggerFactory.getLogger(AnnounceEOService.class);
 
     @Autowired
     private AnnounceEODao dao;

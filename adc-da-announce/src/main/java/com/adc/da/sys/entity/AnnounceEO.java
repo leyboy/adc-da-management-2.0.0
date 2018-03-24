@@ -2,6 +2,7 @@ package com.adc.da.sys.entity;
 
 import com.adc.da.base.entity.BaseEntity;
 
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 /**
@@ -12,16 +13,32 @@ import java.util.Date;
  */
 public class AnnounceEO extends BaseEntity {
 
+    /**
+     * please use UUID#randomUUID to create primary key
+     * **/
     private String pkAnnounce;
+
+    @NotNull(message = "通告标题不能为空")
     private String title1;
+
+    @NotNull(message = "通告内容不能为空")
     private String content1;
-    @org.springframework.format.annotation.DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
+
+    @NotNull(message = "通告到期时间不能为空")
+    @org.springframework.format.annotation.DateTimeFormat(pattern="yyyy-MM-dd 24HH:mm")
     private Date expriyTime;
+
+    @NotNull(message = "通告发布状态不能为空")
     private Integer state1;
+
+    @NotNull(message = "通告创建者不能为空")
     private String announCecreator;
-    @org.springframework.format.annotation.DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
+
+    @NotNull(message = "通告创建时间不能为空")
+    @org.springframework.format.annotation.DateTimeFormat(pattern="yyyy-MM-dd 24HH:mm:ss")
     private Date createTime;
-    @org.springframework.format.annotation.DateTimeFormat(pattern="yyyy-MM-dd HH:mm:ss")
+
+    @org.springframework.format.annotation.DateTimeFormat(pattern="yyyy-MM-dd 24HH:mm:ss")
     private Date updateTime1;
     private Integer deleteFlag;
 
@@ -173,4 +190,32 @@ public class AnnounceEO extends BaseEntity {
         this.deleteFlag = deleteFlag;
     }
 
+    /**
+     * toString method and please alt+insert,find toString() method and add JSON templates.
+     * href link https://www.cnblogs.com/zipon/p/6208346.html
+     * **/
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("{");
+        sb.append("\"pkAnnounce\":\"")
+                .append(pkAnnounce).append('\"');
+        sb.append(",\"title1\":\"")
+                .append(title1).append('\"');
+        sb.append(",\"content1\":\"")
+                .append(content1).append('\"');
+        sb.append(",\"expriyTime\":\"")
+                .append(expriyTime).append('\"');
+        sb.append(",\"state1\":")
+                .append(state1);
+        sb.append(",\"announCecreator\":\"")
+                .append(announCecreator).append('\"');
+        sb.append(",\"createTime\":\"")
+                .append(createTime).append('\"');
+        sb.append(",\"updateTime1\":\"")
+                .append(updateTime1).append('\"');
+        sb.append(",\"deleteFlag\":")
+                .append(deleteFlag);
+        sb.append('}');
+        return sb.toString();
+    }
 }

@@ -19,7 +19,7 @@ public class Swagger2Configuration {
     public Docket createRestApi() {
         return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo()).select()
                 // 为当前包路径
-                .apis(RequestHandlerSelectors.basePackage("com.adc.da"))
+                .apis(RequestHandlerSelectors.basePackage("com.adc.da.sys.controller"))
                 .paths(PathSelectors.any()).build();
     }
 

@@ -1,117 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.adc.da.sys.dao.AnnounceEODao" >
-  <!-- Result Map-->
-  <resultMap id="BaseResultMap" type="com.adc.da.sys.entity.AnnounceEO" >
-    <id column="pk_announce" property="pkAnnounce" />
-    <result column="title1" property="title1" />
-    <result column="content1" property="content1" />
-    <result column="expriy_time" property="expriyTime" />
-    <result column="state1" property="state1" />
-    <result column="announ_cecreator" property="announCecreator" />
-    <result column="create_time" property="createTime" />
-    <result column="update_time1" property="updateTime1" />
-    <result column="delete_flag" property="deleteFlag" />
-  </resultMap>
+<mapper namespace="com.adc.da.sys.dao.AnnounceEODao">
+    <!-- Result Map-->
+    <resultMap id="BaseResultMap" type="com.adc.da.sys.entity.AnnounceEO">
+        <id column="pk_announce" property="pkAnnounce"/>
+        <result column="title1" property="title1"/>
+        <result column="content1" property="content1"/>
+        <result column="expriy_time" property="expriyTime"/>
+        <result column="state1" property="state1"/>
+        <result column="announ_cecreator" property="announCecreator"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time1" property="updateTime1"/>
+        <result column="delete_flag" property="deleteFlag"/>
+    </resultMap>
 
-  <!-- TS_ANNOUNCE table all fields -->
-  <sql id="Base_Column_List" >
+    <!-- TS_ANNOUNCE table all fields -->
+    <sql id="Base_Column_List">
      pk_announce, title1, content1, expriy_time, state1, announ_cecreator, create_time, update_time1, delete_flag
   </sql>
 
-  <!-- 查询条件 -->
-  <sql id="Base_Where_Clause">
-    where 1=1
-    <trim suffixOverrides="," >
-      <if test="pkAnnounce != null" >
-        and pk_announce ${pkAnnounceOperator} #{pkAnnounce}
-      </if>
-      <if test="title1 != null" >
-        and title1 ${title1Operator} #{title1}
-      </if>
-      <if test="content1 != null" >
-        and content1 ${content1Operator} #{content1}
-      </if>
-      <if test="expriyTime != null" >
-        and expriy_time ${expriyTimeOperator} #{expriyTime}
-      </if>
-      <if test="expriyTime1 != null" >
-        and expriy_time &gt;= #{expriyTime1}
-      </if>
-      <if test="expriyTime2 != null" >
-        and expriy_time &lt;= #{expriyTime2}
-      </if>
-      <if test="state1 != null" >
-        and state1 ${state1Operator} #{state1}
-      </if>
-      <if test="announCecreator != null" >
-        and announ_cecreator ${announCecreatorOperator} #{announCecreator}
-      </if>
-      <if test="createTime != null" >
-        and create_time ${createTimeOperator} #{createTime}
-      </if>
-      <if test="createTime1 != null" >
-        and create_time &gt;= #{createTime1}
-      </if>
-      <if test="createTime2 != null" >
-        and create_time &lt;= #{createTime2}
-      </if>
-      <if test="updateTime1 != null" >
-        and update_time1 ${updateTime1Operator} #{updateTime1}
-      </if>
-      <if test="updateTime11 != null" >
-        and update_time1 &gt;= #{updateTime11}
-      </if>
-      <if test="updateTime12 != null" >
-        and update_time1 &lt;= #{updateTime12}
-      </if>
-      <if test="deleteFlag != null" >
-        and delete_flag ${deleteFlagOperator} #{deleteFlag}
-      </if>
-    </trim>
-  </sql>
+    <!-- 查询条件 -->
+    <sql id="Base_Where_Clause">
+        where 1=1 and delete_flag = 0
+        <trim suffixOverrides=",">
+            <if test="pkAnnounce != null">
+                and pk_announce ${pkAnnounceOperator} #{pkAnnounce}
+            </if>
+            <if test="title1 != null">
+                and title1 ${title1Operator} #{title1}
+            </if>
+            <if test="content1 != null">
+                and content1 ${content1Operator} #{content1}
+            </if>
+            <if test="expriyTime != null">
+                and expriy_time ${expriyTimeOperator} #{expriyTime}
+            </if>
+            <if test="expriyTime1 != null">
+                and expriy_time &gt;= #{expriyTime1}
+            </if>
+            <if test="expriyTime2 != null">
+                and expriy_time &lt;= #{expriyTime2}
+            </if>
+            <if test="state1 != null">
+                and state1 ${state1Operator} #{state1}
+            </if>
+            <if test="announCecreator != null">
+                and announ_cecreator ${announCecreatorOperator} #{announCecreator}
+            </if>
+            <if test="createTime != null">
+                and create_time ${createTimeOperator} #{createTime}
+            </if>
+            <if test="createTime1 != null">
+                and create_time &gt;= #{createTime1}
+            </if>
+            <if test="createTime2 != null">
+                and create_time &lt;= #{createTime2}
+            </if>
+            <if test="updateTime1 != null">
+                and update_time1 ${updateTime1Operator} #{updateTime1}
+            </if>
+            <if test="updateTime11 != null">
+                and update_time1 &gt;= #{updateTime11}
+            </if>
+            <if test="updateTime12 != null">
+                and update_time1 &lt;= #{updateTime12}
+            </if>
+        </trim>
+    </sql>
 
-  <!-- 插入记录 -->
-  <insert id="insert" parameterType="com.adc.da.sys.entity.AnnounceEO" >
-    <!-- <selectKey resultType="java.lang.String" order="BEFORE" keyProperty="pk_announce">
-        SELECT SEQ_TS_ANNOUNCE.NEXTVAL FROM DUAL
-    </selectKey> -->
-    insert into TS_ANNOUNCE(<include refid="Base_Column_List" />)
-    values (#{pkAnnounce, jdbcType=VARCHAR}, #{title1, jdbcType=VARCHAR}, #{content1, jdbcType=VARCHAR}, #{expriyTime, jdbcType=TIMESTAMP}, #{state1, jdbcType=INTEGER}, #{announCecreator, jdbcType=VARCHAR}, #{createTime, jdbcType=TIMESTAMP}, #{updateTime1, jdbcType=TIMESTAMP}, #{deleteFlag, jdbcType=INTEGER})
-  </insert>
+    <!-- 插入记录 -->
+    <insert id="insert" parameterType="com.adc.da.sys.entity.AnnounceEO">
+        <!-- <selectKey resultType="java.lang.String" order="BEFORE" keyProperty="pk_announce">
+            SELECT SEQ_TS_ANNOUNCE.NEXTVAL FROM DUAL
+        </selectKey> -->
+        insert into TS_ANNOUNCE(<include refid="Base_Column_List"/>)
+        values (#{pkAnnounce, jdbcType=VARCHAR}, #{title1, jdbcType=VARCHAR}, #{content1, jdbcType=VARCHAR},
+        #{expriyTime, jdbcType=TIMESTAMP}, #{state1, jdbcType=INTEGER}, #{announCecreator, jdbcType=VARCHAR},
+        #{createTime, jdbcType=TIMESTAMP}, #{updateTime1, jdbcType=TIMESTAMP}, #{deleteFlag, jdbcType=INTEGER})
+    </insert>
 
-  <!-- 动态插入记录 主键是序列 -->
-  <insert id="insertSelective" parameterType="com.adc.da.sys.entity.AnnounceEO" >
+    <!-- 动态插入记录 主键是序列 -->
+    <insert id="insertSelective" parameterType="com.adc.da.sys.entity.AnnounceEO">
         <!-- <selectKey resultType="java.lang.String" order="BEFORE" keyProperty="pk_announce">
         SELECT SEQ_TS_ANNOUNCE.NEXTVAL FROM DUAL
     </selectKey> -->
         insert into TS_ANNOUNCE
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-                <if test="pkAnnounce != null" >pk_announce,</if>
-                <if test="title1 != null" >title1,</if>
-                <if test="content1 != null" >content1,</if>
-                <if test="expriyTime != null" >expriy_time,</if>
-                <if test="state1 != null" >state1,</if>
-                <if test="announCecreator != null" >announ_cecreator,</if>
-                <if test="createTime != null" >create_time,</if>
-                <if test="updateTime1 != null" >update_time1,</if>
-                <if test="deleteFlag != null" >delete_flag,</if>
-            </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-                <if test="pkAnnounce != null" >#{pkAnnounce, jdbcType=VARCHAR},</if>
-                <if test="title1 != null" >#{title1, jdbcType=VARCHAR},</if>
-                <if test="content1 != null" >#{content1, jdbcType=VARCHAR},</if>
-                <if test="expriyTime != null" >#{expriyTime, jdbcType=TIMESTAMP},</if>
-                <if test="state1 != null" >#{state1, jdbcType=INTEGER},</if>
-                <if test="announCecreator != null" >#{announCecreator, jdbcType=VARCHAR},</if>
-                <if test="createTime != null" >#{createTime, jdbcType=TIMESTAMP},</if>
-                <if test="updateTime1 != null" >#{updateTime1, jdbcType=TIMESTAMP},</if>
-                <if test="deleteFlag != null" >#{deleteFlag, jdbcType=INTEGER},</if>
-            </trim>
-  </insert>
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pkAnnounce != null">pk_announce,</if>
+            <if test="title1 != null">title1,</if>
+            <if test="content1 != null">content1,</if>
+            <if test="expriyTime != null">expriy_time,</if>
+            <if test="state1 != null">state1,</if>
+            <if test="announCecreator != null">announ_cecreator,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime1 != null">update_time1,</if>
+            <if test="deleteFlag != null">delete_flag,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="pkAnnounce != null">#{pkAnnounce, jdbcType=VARCHAR},</if>
+            <if test="title1 != null">#{title1, jdbcType=VARCHAR},</if>
+            <if test="content1 != null">#{content1, jdbcType=VARCHAR},</if>
+            <if test="expriyTime != null">#{expriyTime, jdbcType=TIMESTAMP},</if>
+            <if test="state1 != null">#{state1, jdbcType=INTEGER},</if>
+            <if test="announCecreator != null">#{announCecreator, jdbcType=VARCHAR},</if>
+            <if test="createTime != null">#{createTime, jdbcType=TIMESTAMP},</if>
+            <if test="updateTime1 != null">#{updateTime1, jdbcType=TIMESTAMP},</if>
+            <if test="deleteFlag != null">#{deleteFlag, jdbcType=INTEGER},</if>
+        </trim>
+    </insert>
 
-  <!-- 根据pk，修改记录-->
-  <update id="updateByPrimaryKey" parameterType="com.adc.da.sys.entity.AnnounceEO" >
+    <!-- 根据pk，修改记录-->
+    <update id="updateByPrimaryKey" parameterType="com.adc.da.sys.entity.AnnounceEO">
     update TS_ANNOUNCE
        set  title1 = #{title1},
             content1 = #{content1},
@@ -124,78 +123,82 @@
      where  pk_announce = #{pkAnnounce}
   </update>
 
-  <!-- 修改记录，只修改只不为空的字段 -->
-  <update id="updateByPrimaryKeySelective" parameterType="com.adc.da.sys.entity.AnnounceEO" >
-    update TS_ANNOUNCE
-    <set >
-      <if test="title1 != null" >
-        title1 = #{title1},
-      </if>
-      <if test="content1 != null" >
-        content1 = #{content1},
-      </if>
-      <if test="expriyTime != null" >
-        expriy_time = #{expriyTime},
-      </if>
-      <if test="state1 != null" >
-        state1 = #{state1},
-      </if>
-      <if test="announCecreator != null" >
-        announ_cecreator = #{announCecreator},
-      </if>
-      <if test="createTime != null" >
-        create_time = #{createTime},
-      </if>
-      <if test="updateTime1 != null" >
-        update_time1 = #{updateTime1},
-      </if>
-      <if test="deleteFlag != null" >
-        delete_flag = #{deleteFlag},
-      </if>
-    </set>
-     where pk_announce = #{pkAnnounce}
-  </update>
+    <!-- 修改记录，只修改只不为空的字段 -->
+    <update id="updateByPrimaryKeySelective" parameterType="com.adc.da.sys.entity.AnnounceEO">
+        update TS_ANNOUNCE
+        <set>
+            <if test="title1 != null">
+                title1 = #{title1},
+            </if>
+            <if test="content1 != null">
+                content1 = #{content1},
+            </if>
+            <if test="expriyTime != null">
+                expriy_time = #{expriyTime},
+            </if>
+            <if test="state1 != null">
+                state1 = #{state1},
+            </if>
+            <if test="announCecreator != null">
+                announ_cecreator = #{announCecreator},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="updateTime1 != null">
+                update_time1 = #{updateTime1},
+            </if>
+            <if test="deleteFlag != null">
+                delete_flag = #{deleteFlag},
+            </if>
+        </set>
+        where pk_announce = #{pkAnnounce}
+    </update>
 
-  <!-- 根据id查询 TS_ANNOUNCE -->
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String">
-    select <include refid="Base_Column_List" /> 
-      from TS_ANNOUNCE
-     where pk_announce = #{value}
+    <!-- 根据id查询 TS_ANNOUNCE -->
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List"/>
+        from TS_ANNOUNCE
+        where delete_flag = 0 and  pk_announce = #{value}
+    </select>
 
-  </select>
+    <!-- 删除记录 -->
+    <update id="deleteByPrimaryKey" parameterType="java.lang.String">
+        update TS_ANNOUNCE set delete_flag =1
+        where pk_announce = #{value}
+    </update>
 
-  <!-- 删除记录 -->
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
-    delete from TS_ANNOUNCE
-     where pk_announce = #{value}
+    <!-- TS_ANNOUNCE 列表总数-->
+    <select id="queryByCount" resultType="java.lang.Integer" parameterType="com.adc.da.base.page.BasePage">
+        select count(1) from TS_ANNOUNCE
+        <include refid="Base_Where_Clause"/>
+    </select>
 
-  </delete>
+    <!-- 查询TS_ANNOUNCE列表 -->
+    <select id="queryByPage" resultMap="BaseResultMap" parameterType="com.adc.da.base.page.BasePage">
+        select
+        <include refid="Base_Column_List"/>
+        from
+        (select tmp_tb.* , rownum rn from
+        (select
+        <include refid="Base_Column_List"/>
+        from TS_ANNOUNCE
+        <include refid="Base_Where_Clause"/>
+        <if test="pager.orderCondition != null and pager.orderCondition != ''">
+            ${pager.orderCondition}
+        </if>
+        ) tmp_tb where rownum &lt;= ${pager.endIndex})
+        where rn &gt;= ${pager.startIndex}
+    </select>
 
-  <!-- TS_ANNOUNCE 列表总数-->
-  <select id="queryByCount" resultType="java.lang.Integer" parameterType="com.adc.da.base.page.BasePage">
-    select count(1) from TS_ANNOUNCE
-    <include refid="Base_Where_Clause"/>
-  </select>
-
-  <!-- 查询TS_ANNOUNCE列表 -->
-  <select id="queryByPage" resultMap="BaseResultMap" parameterType="com.adc.da.base.page.BasePage">
-	select <include refid="Base_Column_List" /> from
-		(select tmp_tb.* , rownum rn from
-			(select <include refid="Base_Column_List" /> from TS_ANNOUNCE
-			 <include refid="Base_Where_Clause"/>
-			 <if test="pager.orderCondition != null and pager.orderCondition != ''" >
-			 	${pager.orderCondition}
-			 </if>
-			) tmp_tb where rownum &lt;= ${pager.endIndex})
-			where rn &gt;= ${pager.startIndex}
-  </select>
-
-  <select id="queryByList" resultMap="BaseResultMap" parameterType="com.adc.da.base.page.BasePage">
-    select <include refid="Base_Column_List"/> from TS_ANNOUNCE
-    <include refid="Base_Where_Clause"/>
-    <if test="pager.orderCondition != null and pager.orderCondition != ''" >
-       ${pager.orderCondition}
-    </if>
-  </select>
-
+    <select id="queryByList" resultMap="BaseResultMap" parameterType="com.adc.da.base.page.BasePage">
+        select
+        <include refid="Base_Column_List"/>
+        from TS_ANNOUNCE
+        <include refid="Base_Where_Clause"/>
+        <if test="pager.orderCondition != null and pager.orderCondition != ''">
+            ${pager.orderCondition}
+        </if>
+    </select>
 </mapper>

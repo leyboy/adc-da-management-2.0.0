@@ -2,10 +2,13 @@ package com.adc.da.sys.controller;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 
+import com.adc.da.sys.util.BindingResultUtils;
+import com.adc.da.sys.util.ResultError;
 import com.adc.da.util.utils.DateUtils;
 import com.adc.da.util.utils.UUID;
 import org.slf4j.Logger;
@@ -44,7 +47,7 @@ public class AnnounceEOController extends BaseController<AnnounceEO>{
     private AnnounceEOService announceEOService;
 
 	@ApiOperation(value = "|AnnounceEO|分页查询")
-    @GetMapping("/page")
+    @GetMapping("WEBSITECONFIGURATION/PCWEBSITECONFIGURATIONSelect/page")
     public ResponseMessage<PageInfo<AnnounceEO>> page(AnnounceEOPage page) throws Exception {
         List<AnnounceEO> rows = announceEOService.queryByPage(page);
         return Result.success(getPageInfo(page.getPager(), rows));
@@ -57,7 +60,8 @@ public class AnnounceEOController extends BaseController<AnnounceEO>{
 	}
 
     @ApiOperation(value = "|AnnounceEO|详情")
-    @GetMapping(value = "/{pkAnnounce}")
+    @GetMapping(value = {"WEBSITECONFIGURATION/PCWEBSITECONFIGURATIONSelect/{pkAnnounce}",
+            "WEBSITECONFIGURATION/MoveWEBSITECONFIGURATIONSelect/{pkAnnounce}"})
     public ResponseMessage<AnnounceEO> find(@PathVariable String pkAnnounce) throws Exception {
         return Result.success(announceEOService.selectByPrimaryKey(pkAnnounce));
     }
@@ -67,9 +71,9 @@ public class AnnounceEOController extends BaseController<AnnounceEO>{
      * **/
     @ApiOperation(value = "|AnnounceEO|新增")
     @PostMapping(consumes = APPLICATION_JSON_UTF8_VALUE,value = "/ANNOUNCESave")
-    public ResponseMessage<AnnounceEO> create(@Validated @RequestBody AnnounceEO announceEO, BindingResult errors) throws Exception {
+    public ResponseMessage<?> create(@Validated @RequestBody AnnounceEO announceEO, BindingResult errors) throws Exception {
         if(errors.hasErrors()){
-            return  bindingResult(errors);
+            return BindingResultUtils.bindingResult(errors);
         }else{
             announceEO.setPkAnnounce(UUID.randomUUID());
             announceEO.setCreateTime(new Date(System.currentTimeMillis()));
@@ -81,9 +85,9 @@ public class AnnounceEOController extends BaseController<AnnounceEO>{
 
     @ApiOperation(value = "|AnnounceEO|修改")
     @PutMapping(consumes = APPLICATION_JSON_UTF8_VALUE,value = {"/ANNOUNCEModify","/ANNOUNCERelease"})
-    public ResponseMessage<AnnounceEO> update(@Validated @RequestBody  AnnounceEO announceEO,BindingResult errors) throws Exception {
+    public ResponseMessage<?> update(@Validated @RequestBody  AnnounceEO announceEO,BindingResult errors) throws Exception {
         if(errors.hasErrors()){
-            return bindingResult(errors);
+            return BindingResultUtils.bindingResult(errors);
         }else{
             announceEOService.updateByPrimaryKeySelective(announceEO);
             return Result.success(announceEO);
@@ -98,17 +102,4 @@ public class AnnounceEOController extends BaseController<AnnounceEO>{
         logger.info("delete from TS_ANNOUNCE where pkAnnounce = {}", pkAnnounce);
         return Result.success();
     }
-
-
-    /**
-     * handle @link(BindingResult) logger
-     * **/
-    private ResponseMessage<AnnounceEO>  bindingResult(BindingResult errors){
-        List<ObjectError> fieldErrors=errors.getAllErrors();
-        for(ObjectError error : fieldErrors){
-            logger.info("error object = {},error filed = {},error message = {}",error.getObjectName(),((FieldError)error).getField(),error.getDefaultMessage());
-        }
-        return Result.error("500","插入数据错误");
-    }
-
 }

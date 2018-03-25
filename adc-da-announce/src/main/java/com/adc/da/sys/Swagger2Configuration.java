@@ -1,5 +1,6 @@
 package com.adc.da.sys;
 
+import com.adc.da.util.utils.SwaggerUtils;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -17,15 +18,19 @@ public class Swagger2Configuration {
 
     @Bean
     public Docket createRestApi() {
-        return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo()).select()
-                // 为当前包路径
-                .apis(RequestHandlerSelectors.basePackage("com.adc.da.sys.controller"))
-                .paths(PathSelectors.any()).build();
+        return SwaggerUtils.initDocket();
     }
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder().title("springboot利用swagger构建api文档")
                 .description(null)
                 .termsOfServiceUrl(null).version("1.0").build();
+    }
+
+    private Docket createMyRestApi(){
+        return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo()).select()
+                // 为当前包路径
+                .apis(RequestHandlerSelectors.basePackage("com.adc.da.sys.controller"))
+                .paths(PathSelectors.any()).build();
     }
 }
